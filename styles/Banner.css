@@ -1,12 +1,19 @@
 .favoritebanner {
-  width: 100%;
-  height: 400;
-  gap: 8px;
-  angle: 0 deg;
-  opacity: 1;
+  width: auto; /* mantiene proporción */
+  height: 100%; /* ocupa todo el alto del contenedor */
 }
 
 body {
   margin: 0px;
   padding: 0px;
+}
+
+.content-testimonial {
+  margin-top: 42px;
+  display: flex;
+  justify-content: center;
+}
+.rating {
+  display: block;
+  margin: 0 auto;
 }
