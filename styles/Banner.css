@@ -1,0 +1,12 @@
+.favoritebanner {
+  width: 100%;
+  height: 400;
+  gap: 8px;
+  angle: 0 deg;
+  opacity: 1;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
