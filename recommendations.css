@@ -1,0 +1,33 @@
+h2 {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.h2-recommendations-div,
+.p-recommendations-div {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+.recommendations-btn {
+  background: linear-gradient(to right, #602ee1, #e968fe);
+  border: none;
+  color: white;
+  width: 345.07px;
+  height: 47px;
+}
+
+.recommendations-image {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
