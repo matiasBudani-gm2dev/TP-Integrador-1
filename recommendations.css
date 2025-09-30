@@ -2,12 +2,10 @@ h2 {
   margin-bottom: 8px;
   text-align: center;
 }
-
 p {
   margin-bottom: 8px;
   text-align: center;
 }
-
 .h2-recommendations-div,
 .p-recommendations-div {
   max-width: 90%;
@@ -24,10 +22,38 @@ p {
   color: white;
   width: 345.07px;
   height: 47px;
+  margin-top: 10px;
 }
-
+.image-container {
+  position: relative;  
+  display: flex;
+  justify-content: center;
+}
 .recommendations-image {
   display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+}
+.arrow-btn {
+  position: absolute;
+  top: 50%;                  
+  transform: translateY(-50%); 
+  background: rgba(0,0,0,0.5); 
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+.arrow-btn.left {
+  left: 35px;  
+  width: 40px;
+}
+.arrow-btn.right {
+  right: 35px; 
+  width: 40px;
+}
+.arrow-btn.left,
+.arrow-btn.right{
+    background-color: #E0E0E0;
 }
