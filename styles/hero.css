@@ -1,6 +1,7 @@
 .hero {
     display: flow-root;
     background-image: url(/assets/HeroImage.png);
+    background-repeat: no-repeat;
     background-position: top center;
 }
 
@@ -39,4 +40,19 @@
     letter-spacing: 8%;
     vertical-align: middle;
     padding: 16px;
+}
+
+@media (min-width: 768px){
+    .hero{
+        background-size: cover;
+    }
+    .main-title{
+        margin: 0 auto;
+        margin-top: 64px;
+        width: 470px;
+        font-size: 40px;
+    }
+    .see-offers{
+        margin-bottom: 64px;
+    }
 }
