@@ -25,7 +25,7 @@ p {
   margin-top: 10px;
 }
 .image-container {
-  position: relative;  
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -36,9 +36,9 @@ p {
 }
 .arrow-btn {
   position: absolute;
-  top: 50%;                  
-  transform: translateY(-50%); 
-  background: rgba(0,0,0,0.5); 
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   font-size: 24px;
@@ -46,14 +46,14 @@ p {
   cursor: pointer;
 }
 .arrow-btn.left {
-  left: 35px;  
+  left: 35px;
   width: 40px;
 }
 .arrow-btn.right {
-  right: 35px; 
+  right: 35px;
   width: 40px;
 }
 .arrow-btn.left,
-.arrow-btn.right{
-    background-color: #E0E0E0;
+.arrow-btn.right {
+  background-color: #e0e0e0;
 }
