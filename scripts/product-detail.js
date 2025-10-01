@@ -54,3 +54,5 @@ buttons.forEach((btn) => {
   selectedSizeText.textContent = `Talle ${selectedWord}`
   });
 });
+
+
