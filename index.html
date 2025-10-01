@@ -17,75 +17,98 @@
     <link rel="stylesheet" href="styles/index.css" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="sticky-banner">
-            <div class="desktop-only">.</div>
-            <div class="banner-message">Envío gratis gastando más de $100.000</div>
-            <div class="banner-link">
-                <a href="https://www.gm2dev.com/">VISITAR GM2 SITE
-                    <!-- Falta que la imagen este centrada verticalmente -->
-                    <img src="assets/gm2dev-link-page.svg" alt="">
-                </a>
-            </div>
+      <div class="sticky-banner">
+        <div class="desktop-only">.</div>
+        <div class="banner-message">Envío gratis gastando más de $100.000</div>
+        <div class="banner-link">
+          <a href="https://www.gm2dev.com/"
+            >VISITAR GM2 SITE
+            <!-- Falta que la imagen este centrada verticalmente -->
+            <img src="assets/gm2dev-link-page.svg" alt="" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="header-navbar">
+        <div class="left">
+          <img
+            src="assets/menu-icon.svg"
+            alt="Menú"
+            class="menu-icon mobile-only"
+          />
+
+          <div class="search-bar">
+            <label for="search-input">
+              <img
+                src="assets/search-icon.svg"
+                alt="Buscar"
+                class="search-icon desktop-only"
+              />
+            </label>
+            <input
+              type="text"
+              list="search-suggestions"
+              id="search-input"
+              placeholder="¿Qué estás buscando?"
+              class="desktop-only"
+            />
+            <datalist id="search-suggestions">
+              <option value="Camisetas"></option>
+              <option value="Gorras"></option>
+              <option value="Pantalones"></option>
+              <option value="Zapatillas"></option>
+            </datalist>
+          </div>
         </div>
 
-        <nav class="header-navbar">
-
-            <div class="left">
-                <img src="assets/menu-icon.svg" alt="Menú" class="menu-icon mobile-only">
-
-                <div class="search-bar">
-                    <label for="search-input">
-                        <img src="assets/search-icon.svg" alt="Buscar" class="search-icon desktop-only">
-                    </label>
-                    <input type="text" list="search-suggestions" id="search-input" placeholder="¿Qué estás buscando?"
-                        class="desktop-only">
-                    <datalist id="search-suggestions">
-                        <option value="Camisetas"></option>
-                        <option value="Gorras"></option>
-                        <option value="Pantalones"></option>
-                        <option value="Zapatillas"></option>
-                    </datalist>
-                </div>
-            </div>
-
-            <div>
-                <img src="assets/gm2-logo.png" alt="" class="gm2-logo">
-            </div>
-
-            <div class="right">
-                <img src="assets/search-icon.svg" alt="Buscar" class="search-icon mobile-only">
-                <div class="cart">
-                    <img src="assets/cart-icon.svg" alt="Carrito" class="cart-icon">
-                    <span class="badge">10</span>
-                </div>
-                <img src="assets/profile-icon.svg" alt="Profile" class="profile-icon desktop-only">
-                <img src="assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only">
-            </div>
-
-        </nav>
-
-        <div class="page-list desktop-only">
-            <ul>
-                <li><a href="#" class="selected-page page-home">Home</a></li>
-                <li><a href="#" class="selected-page page-productos">Productos</a></li>
-            </ul>
+        <div>
+          <img src="assets/gm2-logo.png" alt="" class="gm2-logo" />
         </div>
+
+        <div class="right">
+          <img
+            src="assets/search-icon.svg"
+            alt="Buscar"
+            class="search-icon mobile-only"
+          />
+          <div class="cart">
+            <img src="assets/cart-icon.svg" alt="Carrito" class="cart-icon" />
+            <span class="badge">10</span>
+          </div>
+          <img
+            src="assets/profile-icon.svg"
+            alt="Profile"
+            class="profile-icon desktop-only"
+          />
+          <img
+            src="assets/wishlist-icon.svg"
+            alt="Favoritos"
+            class="wishlist-icon desktop-only"
+          />
+        </div>
+      </nav>
+
+      <div class="page-list desktop-only">
+        <ul>
+          <li><a href="#" class="selected-page page-home">Home</a></li>
+          <li>
+            <a href="#" class="selected-page page-productos">Productos</a>
+          </li>
+        </ul>
+      </div>
     </header>
-</body>
+  </body>
 
-
-<script src="scripts/page-list.js"></script>
-
+  <script src="scripts/page-list.js"></script>
 </html>
