@@ -1,28 +1,41 @@
 const URL = "https://fakestoreapi.com/products";
 let item = 1;
 
-fetch("https://fakestoreapi.com/products/1")
+fetch(`${URL}/${item}`)
   .then((res) => res.json())
   .then((product) => {
-    const img = document.createElement("img");
-    img.src = product.image;
-    img.alt = product.title;
-    img.width = 200;
-
-    // Buscar el div con id="products"
-    const container = document.getElementById("products");
-    container.appendChild(img); // 👈 mete la imagen dentro del div
-
-    const title = document.createElement("h3");
-    title.textContent = product.title;
-    // Precio
-    const price = document.createElement("p");
-    price.textContent = `$${product.price}`;
-    const info = document.getElementById("info-product");
-    info.appendChild(title);
-    info.appendChild(price);
-    console.log(info);
+    setData(product);
   });
+
+function setData(product) {
+  setImage(product);
+  setTitle(product);
+  setPrice(product);
+  setDescription(product);
+}
+
+function setImage(product) {
+  console.log(product);
+  const img = document.createElement("img");
+  img.src = product.image;
+  img.alt = product.title;
+  img.width = 200;
+  const container = document.getElementById("products");
+  container.appendChild(img);
+}
+function setTitle(product) {
+  const title = document.createElement("h3");
+  title.textContent = product.title;
+  const info = document.getElementById("title-product");
+  info.appendChild(title);
+}
+function setPrice(product) {
+  const price = document.createElement("p");
+  price.textContent = `$${product.price}`;
+  const info = document.getElementById("price-product");
+  info.appendChild(price);
+}
+function setDescription(product) {}
 
 const buttons = document.querySelectorAll(".size-btn button");
 const selectedSizeText = document.querySelector(".selected-size")
