@@ -12,7 +12,18 @@ fetch("https://fakestoreapi.com/products/1")
     // Buscar el div con id="products"
     const container = document.getElementById("products");
     container.appendChild(img); // 👈 mete la imagen dentro del div
+
+    const title = document.createElement("h3");
+    title.textContent = product.title;
+    // Precio
+    const price = document.createElement("p");
+    price.textContent = `$${product.price}`;
+    const info = document.getElementById("info-product");
+    info.appendChild(title);
+    info.appendChild(price);
+    console.log(info);
   });
+
 const buttons = document.querySelectorAll(".size-btn button");
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
