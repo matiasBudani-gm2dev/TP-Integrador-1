@@ -11,24 +11,22 @@ transform: translateX(250px);
 .size-btn{
 display: flex;
 }
-.Sbtn{
-    background-color: white;
-    border-color: #E968FE;
-    width: 43px;
-    height: 43px;
-    margin-right: 8px;
-    margin-left: 16pxgi;
+.size-btn button {
+  background-color: white;
+  border: 1px solid #E968FE;
+  color: black;           
+  width: 43px;
+  height: 43px;
+  margin-right: 8px;
 }
-.Mbtn{
-    background-color: white;
-    border-color: #E968FE;
-    width: 43px;
-    height: 43px;
-    margin-right: 8px;
+.size-btn button.active {
+  background-color: #E968FE;
+  color: white;          
 }
-.Lbtn{
-    background-color: white;
-    border-color: #E968FE;
-    width: 43px;
-    height: 43px;
+#S{
+    margin-left: 10px;
+}
+.productos{
+    display: flex;
+justify-content: center;    
 }
