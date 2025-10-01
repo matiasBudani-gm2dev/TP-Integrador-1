@@ -3,7 +3,7 @@
     align-items: end;
 }
 .pD-right-btn{
-transform: translateX(250px);
+transform: translateX(240px);
 opacity: 30%;
 width: 20px;
 height: 20px;
@@ -36,10 +36,16 @@ display: flex;
     display: flex;
     justify-content: center;   
     margin-bottom: 8px; 
+    position: relative;
 }
 .selected-size {
   margin-top: 10px;
   font-size: 16px;
   color: #333;
   height: 20px;
+  margin-left: 10px;
+}
+.zoomImg{
+    position: absolute;
+    margin-left: 32px;
 }
