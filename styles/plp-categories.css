@@ -1,0 +1,100 @@
+.categories {
+    margin-left: 16px;
+}
+
+.categories-filter-title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.categories-container{
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.category-container {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 auto;
+    background-color: #333333;
+    scroll-snap-align: start;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.category{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 80%;
+    height: 70px;
+    background-color: rgba(244, 244, 245, 0.8);
+    backdrop-filter: blur(12px);
+    color: #1E1E1E;
+    gap: 4px;
+    opacity: 1;
+    padding: 16px;
+}
+
+
+.category p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 8%;
+    vertical-align: middle;
+}
+
+/* .category-wrapper{
+    backdrop-filter: (12px);
+} */
+
+
+
+#mens-clothing{
+    background-image: url(https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png);
+    background-size: cover;
+}
+
+#womens-clothing{
+    background-image: url(https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png);
+    background-size: cover;
+}
+
+#electronics {
+    background-image: url(https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png);
+    background-size: cover;
+}
+
+#jewelry{
+    background-image: url(https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png);
+    background-size: cover;
+}
+
+@media (min-width: 768px){
+    .categories-container{
+        flex-wrap: wrap;
+        scroll-snap-type: none;
+        overflow-x: visible; 
+        padding-top: 32px;
+    }
+
+    .category-container{
+        flex: 0 0 24%;
+        scroll-snap-align: none;
+    }
+
+    .categories-container{
+        width: 100%;
+    }
+}
