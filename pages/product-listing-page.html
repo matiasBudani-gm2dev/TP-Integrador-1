@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/product-listing-page.css">
+    <link rel="stylesheet" href="../styles/index.css">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -31,7 +38,9 @@
 
                 <div class="search-bar">
                     <label for="search-input">
-                        <img src="/assets/search-icon.svg" alt="Magnifying glass icon representing search function in website navigation bar, surrounded by clean modern interface elements" class="search-icon desktop-only">
+                        <img src="/assets/search-icon.svg"
+                            alt="Magnifying glass icon representing search function in website navigation bar, surrounded by clean modern interface elements"
+                            class="search-icon desktop-only">
                     </label>
                     <input type="text" list="search-suggestions" id="search-input" placeholder="¿Qué estás buscando?"
                         class="desktop-only">
@@ -62,11 +71,23 @@
 
         <div class="page-list desktop-only">
             <ul>
-                <li><a href="home.html" class="selected-page page-home">Home</a></li>
-                <li><a href="product-listing-page.html" class="selected-page page-productos">Productos</a></li>
+                <li><a href="../index.html" class=" page-home">Home</a></li>
+                <li><a href="product-listing-page.html" class=" page-productos">Productos</a></li>
             </ul>
         </div>
     </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol id="breadcrumb"></ol>
+        </nav>
+    </main>
+
 </body>
+
+
+<script src="../scripts/page-list.js"></script>
+<script src="../scripts/breadcrumb.js"></script>
+
 
 </html>

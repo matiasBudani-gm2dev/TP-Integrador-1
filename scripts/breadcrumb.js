@@ -1,20 +1,27 @@
 const breadcrumb = document.getElementById("breadcrumb");
 
-const path = window.location.pathname
+// nombre distinto
+const segments = window.location.pathname
   .split("/")
   .filter(Boolean);
 
-// construir items
-path.forEach((segment, index) => {
-  const li = document.createElement("li");
-  const isLast = index === path.length - 1;
-  const href = "/" + path.slice(0, index + 1).join("/");
+breadcrumb.innerHTML = "";
 
-  if (isLast) {
-    li.innerHTML = `<span class="current">${segment}</span>`;
-  } else {
-    li.innerHTML = `<a href="${href}">${segment}</a> <span>›</span>`;
-  }
+const homeLi = document.createElement("li");
+homeLi.innerHTML = `<a href="/index.html">Home</a>`;
+breadcrumb.appendChild(homeLi);
+
+// resto
+segments.forEach((segment, index) => {
+  if (segment === "index.html") return;
+
+  const li = document.createElement("li");
+  const isLast = index === segments.length - 1;
+  const href = "/" + segments.slice(0, index + 1).join("/");
+
+  li.innerHTML = isLast
+    ? `<span class="current">${segment}</span>`
+    : `<a href="${href}">${segment}</a>`;
 
   breadcrumb.appendChild(li);
 });
