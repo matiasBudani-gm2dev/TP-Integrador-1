@@ -40,7 +40,14 @@
                     <label for="search-input">
                         <img src="assets/search-icon.svg" alt="Buscar" class="search-icon desktop-only">
                     </label>
-                    <input type="text" id="search-input" placeholder="¿Qué estás buscando?" class="desktop-only">
+                    <input type="text" list="search-suggestions" id="search-input" placeholder="¿Qué estás buscando?"
+                        class="desktop-only">
+                    <datalist id="search-suggestions">
+                        <option value="Camisetas"></option>
+                        <option value="Gorras"></option>
+                        <option value="Pantalones"></option>
+                        <option value="Zapatillas"></option>
+                    </datalist>
                 </div>
             </div>
 
@@ -62,11 +69,14 @@
 
         <div class="page-list desktop-only">
             <ul>
-                <li><a href="#" class="selected-page">Home</a></li>
-                <li><a href="#" class="selected-page">Productos</a></li>
+                <li><a href="#" class="selected-page page-home">Home</a></li>
+                <li><a href="#" class="selected-page page-productos">Productos</a></li>
             </ul>
         </div>
     </header>
 </body>
+
+
+<script src="scripts/page-list.js"></script>
 
 </html>
