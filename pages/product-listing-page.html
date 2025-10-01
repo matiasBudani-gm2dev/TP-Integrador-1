@@ -15,6 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="../styles/cart-product.css">
 
 </head>
 
@@ -78,9 +79,29 @@
     </header>
 
     <main>
-        <nav class="breadcrumb" aria-label="Breadcrumb">
+        <!-- <nav class="breadcrumb" aria-label="Breadcrumb">
             <ol id="breadcrumb"></ol>
-        </nav>
+        </nav> -->
+
+
+        <section class="listing-products">
+
+            <div class="listing-header"></div>
+            <p><span class="product-count">...</span> productos</p>
+
+            <div>
+                <div>
+                    <p>Filtros</p>
+                </div>
+                <div>
+                    <p>Organizar por </p>
+                </div>
+            </div>
+
+            <div id="products-container">
+
+            </div>
+        </section>
     </main>
 
 </body>
@@ -88,6 +109,7 @@
 
 <script src="../scripts/page-list.js"></script>
 <script src="../scripts/breadcrumb.js"></script>
+<script type="module" src="../scripts/listing-products.js"></script>
 
 
 </html>
