@@ -25,10 +25,19 @@ fetch("https://fakestoreapi.com/products/1")
   });
 
 const buttons = document.querySelectorAll(".size-btn button");
+const selectedSizeText = document.querySelector(".selected-size")
+const sizeMap = {
+  S: "Small",
+  M: "Medium",
+  L: "Large"
+}
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     buttons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
+    const selectedLetter = btn.textContent;
+    const selectedWord = sizeMap[selectedLetter];
+  const selected = btn.textContent;
+  selectedSizeText.textContent = `Talle ${selectedWord}`
   });
 });
-document.querySelector(".Mbtn").classList.add("active");
