@@ -1,4 +1,34 @@
 .product-detail-arrow-btn{
-    display: flex;
-    justify-content: space-between;
+    max-width: 60%;
+    align-items: end;
+}
+.pD-right-btn{
+transform: translateX(250px);
+}
+.pD-left-btn{
+    transform: translateX(150px);
+}
+.size-btn{
+display: flex;
+}
+.Sbtn{
+    background-color: white;
+    border-color: #E968FE;
+    width: 43px;
+    height: 43px;
+    margin-right: 8px;
+    margin-left: 16pxgi;
+}
+.Mbtn{
+    background-color: white;
+    border-color: #E968FE;
+    width: 43px;
+    height: 43px;
+    margin-right: 8px;
+}
+.Lbtn{
+    background-color: white;
+    border-color: #E968FE;
+    width: 43px;
+    height: 43px;
 }
