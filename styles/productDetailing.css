@@ -26,7 +26,7 @@ display: flex;
 #S{
     margin-left: 10px;
 }
-.productos{
+#products{
     display: flex;
-justify-content: center;    
+    justify-content: center;    
 }
