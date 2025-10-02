@@ -1,42 +1,42 @@
-.product-detail-arrow-btn{
-    max-width: 60%;
-    align-items: end;
+.product-detail-arrow-btn {
+  max-width: 60%;
+  align-items: end;
 }
-.pD-right-btn{
-transform: translateX(240px);
-opacity: 30%;
-width: 20px;
-height: 20px;
+.pD-right-btn {
+  transform: translateX(240px);
+  opacity: 30%;
+  width: 20px;
+  height: 20px;
 }
-.pD-left-btn{
-    transform: translateX(150px);
-    opacity: 30%;
-    width: 20px;
-    height: 20px;
+.pD-left-btn {
+  transform: translateX(150px);
+  opacity: 30%;
+  width: 20px;
+  height: 20px;
 }
-.size-btn{
-display: flex;
+.size-btn {
+  display: flex;
 }
 .size-btn button {
   background-color: white;
-  border: 1px solid #E968FE;
-  color: black;           
+  border: 1px solid #e968fe;
+  color: black;
   width: 43px;
   height: 43px;
   margin-right: 8px;
 }
 .size-btn button.active {
-  background-color: #E968FE;
-  color: white;          
+  background-color: #e968fe;
+  color: white;
 }
-#S{
-    margin-left: 10px;
+#S {
+  margin-left: 10px;
 }
-#products{
-    display: flex;
-    justify-content: center;   
-    margin-bottom: 8px; 
-    position: relative;
+#products {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative;
 }
 .selected-size {
   margin-top: 10px;
@@ -45,9 +45,9 @@ display: flex;
   height: 20px;
   margin-left: 10px;
 }
-#zoomImg{
-    position: absolute;
-    margin-left: 32px;
+#zoomImg {
+  position: absolute;
+  margin-left: 32px;
 }
 .size-guide{
   color: #E968FE;
@@ -82,4 +82,32 @@ width: 30px;
 border: none;
 background-color: white;
 }
-
+.title-product {
+  font-family: Work Sans;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  padding-bottom: 8px;
+}
+.price-product {
+  font-family: Work Sans;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  padding-bottom: 16px;
+}
+.description-product {
+  font-family: Work Sans;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 2%;
+}
+main {
+  padding-left: 16px;
+  padding-right: 16px;
+}

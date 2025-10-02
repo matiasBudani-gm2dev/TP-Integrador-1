@@ -28,30 +28,38 @@ function setTitle(product) {
   title.textContent = product.title;
   const info = document.getElementById("title-product");
   info.appendChild(title);
+  title.classList.add("title-product");
 }
 function setPrice(product) {
   const price = document.createElement("p");
   price.textContent = `$${product.price}`;
   const info = document.getElementById("price-product");
   info.appendChild(price);
+  price.classList.add("price-product");
 }
-function setDescription(product) {}
+function setDescription(product) {
+  const description = document.createElement("p");
+  description.textContent = `${product.description}`;
+  const info = document.getElementById("description-product");
+  info.appendChild(description);
+  info.classList.add("description-product");
+}
 
 const buttons = document.querySelectorAll(".size-btn button");
-const selectedSizeText = document.querySelector(".selected-size")
+const selectedSizeText = document.querySelector(".selected-size");
 const sizeMap = {
   S: "Small",
   M: "Medium",
-  L: "Large"
-}
+  L: "Large",
+};
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     buttons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
     const selectedLetter = btn.textContent;
     const selectedWord = sizeMap[selectedLetter];
-  const selected = btn.textContent;
-  selectedSizeText.textContent = `Talle ${selectedWord}`
+    const selected = btn.textContent;
+    selectedSizeText.textContent = `Talle ${selectedWord}`;
   });
 });
 let valueCounter = 0;
