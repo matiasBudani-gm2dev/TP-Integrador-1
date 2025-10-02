@@ -90,15 +90,55 @@
 
         <section class="listing-products">
 
-            <div class="listing-header"></div>
-            <p><span class="product-count">...</span> productos</p>
+            <div class="listing-header">
+                <p><span class="product-count">...</span> productos</p>
 
-            <div>
-                <div>
-                    <p>Filtros</p>
-                </div>
-                <div>
-                    <p>Organizar por </p>
+
+                <div class="filter-section">
+                    <input type="checkbox" name="filter" id="filter-input">
+                    <input type="checkbox" name="order-by" id="order-by-input">
+                    <label for="filter-input" id="filter-label" class="filter-option">
+                        <img src="/assets/filter Icon.svg" alt="">
+                        <p>Filtros</p>
+                    </label>
+                    <label for="order-by-input" id="order-by-label" class="filter-option">
+                        <img src="/assets/sort-desc.svg" alt="">
+                        <p>Organizar por</p>
+                    </label>
+                    <div class="filter-drawer">
+                        <div class="filter-drawer-header">
+                            <h3>FILTROS</h3>
+                            <label for="filter-input">
+                                <img src="/assets/Dawn icons.svg" alt="">
+                            </label>
+                        </div>
+                        <div class="selected-filters">
+                            <div class="selected"></div>
+                        </div>
+                        <div class="filter-tags"></div>
+                        <button class="filter-acordion">
+                            <p>Talla</p>
+                            <img src="/assets/Remix icons.svg" alt="">
+                        </button>
+                        <div class="filters">
+
+                            <button id="talle-L" onclick="checkFilterSize(this.id)" class="filter">
+                                <img src="/assets//unchecked box.svg" alt="">
+                                <p>L (8)</p>
+                            </button>
+
+                            <button id="talle-M" onclick="checkFilterSize(this.id)" class="filter">
+                                <img src="/assets//unchecked box.svg" alt="">
+                                <p>M (12)</p>
+                            </button>
+
+                            <button id="talle-S" onclick="checkFilterSize(this.id)" class="filter">
+                                <img src="/assets//unchecked box.svg" alt="">
+                                <p>S (5)</p>
+                            </button>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -113,6 +153,7 @@
 <script type="module" src="../scripts/main.js"></script>
 <script src="../scripts/page-list.js"></script>
 <script src="../scripts/breadcrumb.js"></script>
-
+<script type="module" src="../scripts/listing-products.js"></script>
+<script type="module" src="../scripts/cart-wishlist.js"></script>
 
 </html>
