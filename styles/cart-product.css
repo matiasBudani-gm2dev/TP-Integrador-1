@@ -155,3 +155,7 @@ padding: 11.25px;
     cursor: pointer;
     top: 59.83px;
 }
+
+.btn-selected {
+    background-color: violet;
+}
