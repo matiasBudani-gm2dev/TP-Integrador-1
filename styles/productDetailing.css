@@ -201,3 +201,10 @@ main {
   margin: 1rem;
   max-width: 352px;
 }
+.delivery p {
+  font-weight: 300;
+  font-style: Light;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 2%;
+}
