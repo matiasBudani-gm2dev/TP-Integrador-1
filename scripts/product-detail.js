@@ -1,5 +1,5 @@
 const URL = "https://fakestoreapi.com/products";
-let item = 18;
+let item = 16;
 
 fetch(`${URL}/${item}`)
   .then((res) => res.json())
@@ -13,6 +13,7 @@ function setData(product) {
   setPrice(product);
   setDescription(product);
   setRate(product);
+  setOpinion(product);
 }
 
 function setImage(product) {
