@@ -115,11 +115,11 @@ body {
   margin: auto;
 }
 main {
+  font-family: Work Sans;
   padding-left: 16px;
   padding-right: 16px;
 }
 .rate-product {
-  font-family: Work Sans;
   font-weight: 400;
   font-style: Regular;
   font-size: 40px;
@@ -155,6 +155,7 @@ main {
   font-size: 13px;
   line-height: 150%;
   letter-spacing: 3%;
+  padding-top: 8px;
 }
 .add-to-cart {
   color: #e968fe;
@@ -190,4 +191,13 @@ main {
   height: 47px;
   margin-top: 10px;
   max-width: 400px;
+}
+.delivery {
+  background: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  max-width: 352px;
 }
