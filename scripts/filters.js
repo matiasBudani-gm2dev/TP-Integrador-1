@@ -1,3 +1,13 @@
+import { getProducts } from "./listing-products.js";
+
+document.querySelectorAll('.filters button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    checkFilterSize(this.id);
+  });
+});
+
+getProducts()
+
 let countSelected = 0;
 function showSelected(){
     const selected = document.querySelector(".selected")
