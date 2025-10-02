@@ -1,3 +1,6 @@
+body{
+  margin: auto;
+}
 .product-detail-arrow-btn {
   max-width: 60%;
   align-items: end;
@@ -51,11 +54,11 @@
 }
 .size-guide{
   color: #E968FE;
-  margin-left: 20px;
+  margin-left: 3px;
 }
 .quantity{
   margin-top: 16px;
-  margin-left: 20px;
+  margin-left: 3px;
 }
 .more-less{
   display: flex;
@@ -67,8 +70,8 @@
   opacity: 50%;
   height: 43px;
   width: 400px;
-  max-width: 500px;
-  transform: translateX(25px);
+  max-width: auto;
+  transform: translateX(10px);
 }
 #more{
 height: 30px;
@@ -111,3 +114,24 @@ main {
   padding-left: 16px;
   padding-right: 16px;
 }
+.add-to-cart{
+  color: #E968FE;
+  border: 1px solid #e968fe;
+  background-color: white;
+  width: 400px;
+  height: 47px;
+  margin-top: 10px;
+}
+.add-to-cart-div{
+  display: flex;
+  justify-content: start;
+}
+.buy-now{
+  color: white;
+  background: linear-gradient(246.9deg, #E968FE -13.83%, #602EE1 85.37%);
+  width: 400px;
+  height: 47px;
+  margin-top: 10px;
+  border: none;
+}
+
