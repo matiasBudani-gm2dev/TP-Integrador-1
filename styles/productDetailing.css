@@ -4,6 +4,7 @@ body {
 .product-detail-arrow-btn {
   display: flex;
   justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   max-width: 200px;
   margin: 0 auto;
@@ -115,11 +116,11 @@ body {
   margin: auto;
 }
 main {
+  font-family: Work Sans;
   padding-left: 16px;
   padding-right: 16px;
 }
 .rate-product {
-  font-family: Work Sans;
   font-weight: 400;
   font-style: Regular;
   font-size: 40px;
@@ -137,6 +138,25 @@ main {
   text-decoration-style: solid;
   text-decoration-thickness: 0%;
   color: #e968fe;
+}
+
+#circule {
+  background: #108043;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.stock {
+  width: 57;
+  height: 20;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 13px;
+  line-height: 150%;
+  letter-spacing: 3%;
+  padding-top: 8px;
 }
 .add-to-cart {
   color: #e968fe;
@@ -216,3 +236,12 @@ main {
   margin-top: 10px;
 }
 
+.delivery {
+  background: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  max-width: 352px;
+}
