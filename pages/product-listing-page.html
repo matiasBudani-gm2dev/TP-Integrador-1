@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../styles/index.css">
     <title>Document</title>
 
-    <link rel="stylesheet" href="../styles/header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,6 +16,7 @@
 
     <link rel="stylesheet" href="../styles/cart-product.css">
     <link rel="stylesheet" href="../styles/breadcrumb.css">
+    <link rel="stylesheet" href="../styles/header.css">
 
 </head>
 
@@ -63,10 +63,13 @@
                 <img src="/assets/search-icon.svg" alt="Buscar" class="search-icon mobile-only">
                 <div class="cart">
                     <img src="/assets/cart-icon.svg" alt="Carrito" class="cart-icon">
-                    <span class="badge">10</span>
+                    <span class="badge" id="cart-count"></span>
                 </div>
                 <img src="/assets/profile-icon.svg" alt="Profile" class="profile-icon desktop-only">
-                <img src="/assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only">
+                <div class="wishlist">
+                    <img src="/assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only">
+                    <span class="badge" id="wishlist-count"></span>
+                </div>
             </div>
 
         </nav>
@@ -80,10 +83,10 @@
     </header>
 
     <main>
+
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <ul id="breadcrumb"></ul>
         </nav>
-
 
         <section class="listing-products">
 
@@ -107,10 +110,10 @@
 
 </body>
 
-
+<script type="module" src="../scripts/main.js"></script>
 <script src="../scripts/page-list.js"></script>
 <script src="../scripts/breadcrumb.js"></script>
 <script type="module" src="../scripts/listing-products.js"></script>
-
+<script type="module" src="../scripts/cart-wishlist.js"></script>
 
 </html>

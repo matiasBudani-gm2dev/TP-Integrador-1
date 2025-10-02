@@ -1,4 +1,4 @@
-async function getProducts() {
+export async function getProducts() {
   try {
     const response = await fetch('https://fakestoreapi.com/products');
     if (!response.ok) {
@@ -14,22 +14,28 @@ async function getProducts() {
 function createProductCard(product) {
   const productCard = document.createElement('section');
   productCard.className = 'product-card';
+  productCard.setAttribute('data-product-id', product.id);
 
-   productCard.innerHTML = `
+  productCard.innerHTML = `
     <img src="${product.image}" alt="${product.title}" class="product-image" />
     <div class="product-text">
       <h3 class="product-title">${product.title}</h3>
       <p class="product-price">$${product.price}</p>
     </div>
-    <button class="add-to-cart-btn btn-card"><img src="../assets/cart-icon.svg" alt="Add to Cart"></button>
-    <button class="add-to-wishlist-btn btn-card"><img src="../assets/wishlist-icon.svg" alt="Add to Wishlist"></button>
+    <button class="add-to-cart-btn btn-card">
+      <img src="../assets/cart-icon.svg" alt="Add to Cart">
+    </button>
+    <button class="add-to-wishlist-btn btn-card">
+      <img src="../assets/wishlist-icon.svg" alt="Add to Wishlist">
+    </button>
   `;
-
   return productCard;
 }
 
-function displayProducts(products) {
+export function displayProducts(products) {
   const productList = document.getElementById('products-container');
+  if (!productList) return;
+
   productList.innerHTML = '';
   products.forEach(product => {
     const productCard = createProductCard(product);
@@ -37,15 +43,7 @@ function displayProducts(products) {
   });
 }
 
-function updateProductCount(count) {
+export function updateProductCount(count) {
   const productCount = document.querySelector('.product-count');
-  productCount.textContent = `${count}`;
+  if (productCount) productCount.textContent = `${count}`;
 }
-
-async function init() {
-  const products = await getProducts();
-  displayProducts(products);
-  updateProductCount(products.length);
-}
-
-document.addEventListener("DOMContentLoaded", init);
