@@ -1,10 +1,92 @@
+.listing-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+}
+
+.listing-header p{
+    height: 21px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 2%;
+}
+
 .listing-products {
     padding: 1rem;
+}
+
+.filter-section {
+    height: 21px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 17px 0;
+}
+
+.filter-option {
+    display: flex;
+    font-weight: 300;
+    font-size: 14px;
+    gap: 4px;
+    cursor: pointer;
+}
+
+#filter-input{
+    display: none;
+}
+
+#order-by-input{
+    display: none;
+}
+
+#filter-input:checked ~ .filter-drawer{
+    transform: translateX(0);
+}
+
+
+.filter-drawer{
+    width: 100%;
+    position: absolute;
+    transform: translateX(100%);
+    transition: 0.4s ease;
+    background-color: white;
+    top:68px
+}
+
+.filter-drawer-header{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-acordion{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.filter{
+    display: flex;
+    background: none;
+    border: 0
+}
+
+.filter p{
+    text-align: left;
 }
 
 #products-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 7px;
 }
