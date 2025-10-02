@@ -54,5 +54,19 @@ buttons.forEach((btn) => {
   selectedSizeText.textContent = `Talle ${selectedWord}`
   });
 });
-
-
+let valueCounter = 0;
+const counterElement = document.getElementById("counter")
+const increaseBtn = document.getElementById("more")
+const decreaseBtn = document.getElementById("less")
+function increase(){
+  valueCounter++;
+  counterElement.textContent = valueCounter
+}
+function decrease() {
+  if (valueCounter > 0) { 
+    valueCounter--;
+    counterElement.textContent = valueCounter;
+  }
+}
+increaseBtn.onclick = increase;
+decreaseBtn.onclick = decrease;
