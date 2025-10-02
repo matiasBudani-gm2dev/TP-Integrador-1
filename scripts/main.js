@@ -5,13 +5,20 @@ import { wireHeaderSearch } from "./search-header.js";
 async function init() {
   // 1. Traer productos
   const products = await getProducts();
-  displayProducts(products);
-  updateProductCount(products.length);
+  const params = new URLSearchParams(window.location.search);
+  const q = (params.get("search") || "").toLowerCase().trim();
 
-  // 2. Marcar botones según localStorage
+  let list = products;
+  if (q) {
+    list = products.filter(p =>
+      `${p.title} ${p.category ?? ""}`.toLowerCase().includes(q)
+    );
+  }
+
+  displayProducts(list);
+  updateProductCount(list.length);
   syncButtonsFromStorage();
 
-  // 3. Actualizar contadores en header
   updateCartCount();
   updateWishlistCount();
 

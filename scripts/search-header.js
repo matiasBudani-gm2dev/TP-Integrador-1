@@ -1,23 +1,43 @@
-let debounce;
 export function wireHeaderSearch() {
-    const searchInput = document.getElementById('search-input')
-    if (!searchInput) return
+  const input = document.getElementById('search-input');
+  if (!input) return;
 
-    searchInput.addEventListener('input', e => {
-        clearTimeout(debounce);
-        debounce = setTimeout(() => {
-        const query = e.target.value.trim();
-        if (query) {
-            console.log("Buscar:", query);
-        }
-    }, 200);
-    })
-    searchInput.addEventListener('keydown', e => {
-        const query = e.target.value.trim();
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            window.location.href = `/pages/product-listing-page.html?search=${encodeURIComponent(query)}`;
-        }
-    })
+  let debounceTimer;
+  let idleTimer;
 
+  const handleQuery = (query) => {
+    document.dispatchEvent(new CustomEvent('header:search', { detail: { q: query } }));
+  };
+
+  input.addEventListener('input', e => {
+    const query = e.target.value.trim() || '';
+    clearTimeout(debounceTimer);
+    clearTimeout(idleTimer);
+
+    debounceTimer = setTimeout(() => handleQuery(query), 300);
+
+    idleTimer = setTimeout(() => {
+      const url = new URL(window.location.href);
+      if (query) {
+        url.searchParams.set("search", query);
+      } else {
+        url.searchParams.delete("search");
+      }
+      history.replaceState({}, "", url);
+    }, 5000);
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const query = e.target.value.trim();
+      if (query) {
+        window.location.href =
+          `/pages/product-listing-page.html?search=${encodeURIComponent(query)}`;
+      }
+    } else if (e.key === 'Escape') {
+      input.value = '';
+      handleQuery('');
+    }
+  });
 }
