@@ -1,5 +1,5 @@
 const URL = "https://fakestoreapi.com/products";
-let item = 1;
+let item = 18;
 
 fetch(`${URL}/${item}`)
   .then((res) => res.json())
@@ -12,6 +12,7 @@ function setData(product) {
   setTitle(product);
   setPrice(product);
   setDescription(product);
+  setRate(product);
 }
 
 function setImage(product) {
@@ -44,6 +45,20 @@ function setDescription(product) {
   info.appendChild(description);
   info.classList.add("description-product");
 }
+function setRate(product) {
+  const rate = document.createElement("p");
+  rate.textContent = `${product.rating.rate}`;
+  const rating = document.getElementById("rate-product");
+  rating.appendChild(rate);
+  rating.classList.add("rate-product");
+}
+function setOpinion(product) {
+  const opinion = document.createElement("p");
+  opinion.textContent = `(${product.rating.count} Reviews)`;
+  const review = document.getElementById("review-product");
+  review.appendChild(opinion);
+  review.classList.add("review-product");
+}
 
 const buttons = document.querySelectorAll(".size-btn button");
 const selectedSizeText = document.querySelector(".selected-size");
@@ -63,15 +78,15 @@ buttons.forEach((btn) => {
   });
 });
 let valueCounter = 0;
-const counterElement = document.getElementById("counter")
-const increaseBtn = document.getElementById("more")
-const decreaseBtn = document.getElementById("less")
-function increase(){
+const counterElement = document.getElementById("counter");
+const increaseBtn = document.getElementById("more");
+const decreaseBtn = document.getElementById("less");
+function increase() {
   valueCounter++;
-  counterElement.textContent = valueCounter
+  counterElement.textContent = valueCounter;
 }
 function decrease() {
-  if (valueCounter > 0) { 
+  if (valueCounter > 0) {
     valueCounter--;
     counterElement.textContent = valueCounter;
   }

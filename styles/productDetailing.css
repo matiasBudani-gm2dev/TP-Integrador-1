@@ -114,6 +114,29 @@ main {
   padding-left: 16px;
   padding-right: 16px;
 }
+.rate-product {
+  font-family: Work Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 40px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.review-product {
+  font-family: Work Sans;
+  font-weight: 300;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+  color: #e968fe;
+}
 .add-to-cart{
   color: #E968FE;
   border: 1px solid #e968fe;
