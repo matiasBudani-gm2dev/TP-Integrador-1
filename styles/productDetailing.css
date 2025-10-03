@@ -140,7 +140,7 @@ main {
   color: #e968fe;
 }
 
-#circule {
+#circle {
   background: #108043;
   width: 8px;
   height: 8px;
@@ -192,56 +192,6 @@ main {
   height: 47px;
   margin-top: 10px;
   max-width: 400px;
-}
-.clients-img1 {
-  display: flex;
-  width: 40px;
-  margin-top: 20px;
-}
-.clients-img2 {
-  display: flex;
-  width: 40px;
-  margin-top: 20px;
-}
-.clients-img3 {
-  display: flex;
-  width: 40px;
-  margin-top: 20px;
-}
-.clients-img1 p {
-  display: flex;
-  align-items: start;
-}
-.clients-img1 .verified {
-  height: 20px;
-  margin-top: 10px;
-}
-.clients-img2 p {
-  display: flex;
-  align-items: start;
-  height: 10px;
-}
-.clients-img2 .verified {
-  height: 20px;
-  margin-top: 20px;
-  margin-left: -42px;
-  margin-top: 25px;
-}
-.clients-img3 p {
-  display: flex;
-  align-items: start;
-  height: 10px;
-}
-.clients-img3 .verified {
-  height: 20px;
-  margin-top: 15px;
-}
-.recommend-lucia {
-  margin-top: 60px;
-  margin-left: -200px;
-}
-.lu {
-  margin-top: 20px;
 }
 .delivery {
   background: #e4e4e4;
