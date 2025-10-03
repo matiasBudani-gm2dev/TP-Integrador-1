@@ -1,5 +1,6 @@
 if (!localStorage.getItem('cart')) localStorage.setItem('cart', '[]');
 if (!localStorage.getItem('wishlist')) localStorage.setItem('wishlist', '[]');
+if (!localStorage.getItem('products')) localStorage.setItem('products', '[]');
 
 const cartCount = document.getElementById('cart-count');
 const wishlistCount = document.getElementById('wishlist-count');
@@ -29,22 +30,27 @@ export function syncButtonsFromStorage() {
 }
 
 export function toggleCart(id, button) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    if (!cart.includes(id)) {
-        cart.push(id);
-        button.classList.add('btn-selected')
-    } else {
-        cart = cart.filter(item => item !== id);
-        button.classList.remove('btn-selected');
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
+  id = Number(id);
+  let cart = (JSON.parse(localStorage.getItem('cart') || '[]')).map(Number);
+
+  const i = cart.indexOf(id);
+  if (i === -1) {
+    cart.unshift(id);
+    button?.classList.add('btn-selected');
+  } else {
+    cart.splice(i, 1);               
+    if (!cart.includes(id)) button?.classList.remove('btn-selected');
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
 }
+
 
 export function toggleWishlist(id, button) {
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (!wishlist.includes(id)) {
-        wishlist.push(id);
+        wishlist.unshift(id);
         button.classList.add('btn-selected')
     } else {
         wishlist = wishlist.filter(item => item !== id)
@@ -53,4 +59,12 @@ export function toggleWishlist(id, button) {
     }
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
     updateWishlistCount();
+}
+
+export function removeFromCart(id) {
+  id = Number(id);
+  let cart = (JSON.parse(localStorage.getItem('cart') || '[]')).map(Number);
+  cart = cart.filter(x => x !== id); 
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
 }
