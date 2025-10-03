@@ -21,7 +21,7 @@ function setImage(product) {
   const img = document.createElement("img");
   img.src = product.image;
   img.alt = product.title;
-  img.width = 200;
+  img.height = 600;
   const container = document.getElementById("products");
   container.appendChild(img);
 }
