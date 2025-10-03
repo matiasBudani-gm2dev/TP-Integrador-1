@@ -251,13 +251,7 @@ main {
     width: 80px;
     margin: 10px 0 0 0;
   }
-  #products {
-    position: relative;
-    top: 10px;
-    left: 170px;
-    z-index: 10;
-    width: 40px;
-  }
+
   .rating-comments {
     margin-top: 20px;
   }
@@ -270,9 +264,6 @@ main {
       left: 250px;
       z-index: 10;
       width: 40px;
-    }
-    #products {
-      position: relative;
     }
   }
   #zoomImg {
@@ -300,4 +291,25 @@ main {
   .pD-right-btn {
     display: none;
   }
-
+  #Breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 80px;
+    gap: 1rem;
+  }
+  #info-product {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  #photo-product {
+    display: flex;
+    flex: 0 0 60%; /* el bloque con la imagen ocupa 60% */
+    object-fit: cover;
+    justify-content: center;
+  }
+  main {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
