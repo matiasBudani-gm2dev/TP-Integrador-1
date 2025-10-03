@@ -158,6 +158,19 @@ main {
   letter-spacing: 3%;
   padding-top: 8px;
 }
+
+#points-loyalty {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 1072px;
+  p {
+    margin-left: 16px;
+    color: #ffff;
+  }
+}
 .add-to-cart {
   color: #e968fe;
   border: 1px solid #e968fe;
