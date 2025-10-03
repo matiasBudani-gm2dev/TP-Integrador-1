@@ -1,0 +1,161 @@
+.listing-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+}
+
+.listing-header p{
+    height: 21px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 2%;
+}
+
+.listing-products {
+    padding: 1rem;
+}
+
+.filter-section {
+    height: 21px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 17px 0;
+}
+
+.filter-option {
+    display: flex;
+    font-weight: 300;
+    font-size: 14px;
+    gap: 4px;
+    cursor: pointer;
+}
+
+#filter-input{
+    display: none;
+}
+
+#order-by-input{
+    display: none;
+}
+
+#filter-input:checked ~ .filter-drawer{
+    transform: translateX(0);
+}
+
+
+.filter-drawer{
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    transform: translateX(100%);
+    transition: 0.4s ease;
+    background-color: white;
+    top:68px
+}
+
+.filter-drawer-header{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-acordion{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.filter{
+    display: flex;
+    background: none;
+    border: 0
+}
+
+.filter p{
+    text-align: left;
+}
+
+#products-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.product-card {
+    width: 168px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.product-image {
+    width: 168px;
+    height: 168px;
+    object-fit: contain;
+    background-color: rgb(227, 227, 227);
+}
+
+.product-text {
+    width: 168px;
+    padding: .5rem;
+}
+
+.product-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+font-weight: 300;
+font-style: Light;
+font-size: 14px;
+line-height: 150%;
+letter-spacing: 2%;
+color:  #1E1E1E;
+}
+
+.product-price {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 4%;
+    color: #1E1E1E;
+}
+
+.btn-card {
+background-color: #F4F4F5CC;
+position: absolute;
+left: calc(100% - 44px - 8px);
+padding: 11.25px;
+    &.img{
+        width: 17.5px;
+        height: 17.5px;
+    }
+}
+
+.add-to-cart-btn {
+    border: none;
+    cursor: pointer;
+    top: 7.83px;
+    
+}
+.add-to-wishlist-btn {
+    border: none;
+    cursor: pointer;
+    top: 59.83px;
+}
+
+.btn-selected {
+    background-color: violet;
+}

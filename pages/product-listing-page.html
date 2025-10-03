@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="/styles/plp-categories.css">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/cart-product.css">
+    <link rel="stylesheet" href="../styles/breadcrumb.css">
+    <link rel="stylesheet" href="../styles/header.css">
+
 </head>
 
 <body>
@@ -32,7 +41,9 @@
 
                 <div class="search-bar">
                     <label for="search-input">
-                        <img src="/assets/search-icon.svg" alt="Magnifying glass icon representing search function in website navigation bar, surrounded by clean modern interface elements" class="search-icon desktop-only">
+                        <img src="/assets/search-icon.svg"
+                            alt="Magnifying glass icon representing search function in website navigation bar, surrounded by clean modern interface elements"
+                            class="search-icon desktop-only">
                     </label>
                     <input type="text" list="search-suggestions" id="search-input" placeholder="¿Qué estás buscando?"
                         class="desktop-only">
@@ -53,18 +64,21 @@
                 <img src="/assets/search-icon.svg" alt="Buscar" class="search-icon mobile-only">
                 <div class="cart">
                     <img src="/assets/cart-icon.svg" alt="Carrito" class="cart-icon">
-                    <span class="badge">10</span>
+                    <span class="badge" id="cart-count"></span>
                 </div>
                 <img src="/assets/profile-icon.svg" alt="Profile" class="profile-icon desktop-only">
-                <img src="/assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only">
+                <div class="wishlist">
+                    <img src="/assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only">
+                    <span class="badge" id="wishlist-count"></span>
+                </div>
             </div>
 
         </nav>
 
         <div class="page-list desktop-only">
             <ul>
-                <li><a href="home.html" class="selected-page page-home">Home</a></li>
-                <li><a href="product-listing-page.html" class="selected-page page-productos">Productos</a></li>
+                <li><a href="../index.html" class=" page-home">Home</a></li>
+                <li><a href="product-listing-page.html" class=" page-productos">Productos</a></li>
             </ul>
         </div>
     </header>
@@ -103,7 +117,79 @@
             </button>
         </div>
     </section>
+    <main>
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ul id="breadcrumb"></ul>
+        </nav>
+
+        <section class="listing-products">
+
+            <div class="listing-header">
+                <p><span class="product-count">...</span> productos</p>
+
+
+                <div class="filter-section">
+                    <input type="checkbox" name="filter" id="filter-input">
+                    <input type="checkbox" name="order-by" id="order-by-input">
+                    <label for="filter-input" id="filter-label" class="filter-option">
+                        <img src="/assets/filter Icon.svg" alt="">
+                        <p>Filtros</p>
+                    </label>
+                    <label for="order-by-input" id="order-by-label" class="filter-option">
+                        <img src="/assets/sort-desc.svg" alt="">
+                        <p>Organizar por</p>
+                    </label>
+                    <div class="filter-drawer">
+                        <div class="filter-drawer-header">
+                            <h3>FILTROS</h3>
+                            <label for="filter-input">
+                                <img src="/assets/Dawn icons.svg" alt="">
+                            </label>
+                        </div>
+                        <div class="selected-filters">
+                            <div class="selected"></div>
+                        </div>
+                        <div class="filter-tags"></div>
+                        <button class="filter-acordion">
+                            <p>Talla</p>
+                            <img src="/assets/Remix icons.svg" alt="">
+                        </button>
+                        <div class="filters">
+
+                            <button id="talle-L" class="filter">
+                                <img src="/assets//unchecked box.svg" alt="">
+                                <p>L (8)</p>
+                            </button>
+
+                            <button id="talle-M" class="filter">
+                                <img src="/assets//unchecked box.svg" alt="">
+                                <p>M (12)</p>
+                            </button>
+
+                            <button id="talle-S" class="filter">
+                                <img src="/assets//unchecked box.svg" alt="">
+                                <p>S (5)</p>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="products-container">
+
+            </div>
+        </section>
+    </main>
 
 </body>
+
+<script type="module" src="../scripts/main.js"></script>
+<script src="../scripts/page-list.js"></script>
+<script src="../scripts/breadcrumb.js"></script>
+<script type="module" src="../scripts/listing-products.js"></script>
+<script type="module" src="../scripts/cart-wishlist.js"></script>
+<script type="module" src="../scripts/filters.js"></script>
 
 </html>

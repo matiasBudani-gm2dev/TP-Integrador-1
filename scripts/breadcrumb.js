@@ -1,20 +1,34 @@
 const breadcrumb = document.getElementById("breadcrumb");
 
-const path = window.location.pathname
+const segments = window.location.pathname
   .split("/")
   .filter(Boolean);
 
-// construir items
-path.forEach((segment, index) => {
-  const li = document.createElement("li");
-  const isLast = index === path.length - 1;
-  const href = "/" + path.slice(0, index + 1).join("/");
+const segmentMap = {
+  "product-listing-page.html": "Productos"
+};
 
-  if (isLast) {
-    li.innerHTML = `<span class="current">${segment}</span>`;
-  } else {
-    li.innerHTML = `<a href="${href}">${segment}</a> <span>›</span>`;
-  }
+
+breadcrumb.innerHTML = "";
+
+const homeLi = document.createElement("li");
+homeLi.innerHTML = `
+  <a href="/index.html">Home</a>`;
+breadcrumb.appendChild(homeLi);
+
+segments.forEach((segment, index) => {
+  if (segment === "index.html" || segment === 'pages') return;
+
+  const li = document.createElement("li");
+  const isLast = index === segments.length - 1;
+  const href = "/" + segments.slice(0, index + 1).join("/");
+
+  const name = segmentMap[segment] || segment.replace(/[-_]/g, " ");
+
+  li.innerHTML = isLast
+    ? `<span class="current">${name}</span>`
+    : `<a href="${href}">${name}</a>`;
 
   breadcrumb.appendChild(li);
 });
+

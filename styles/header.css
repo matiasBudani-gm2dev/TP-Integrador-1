@@ -88,11 +88,16 @@ body, html {
   display: inline-block;
 }
 
+.wishlist {
+  position: relative;
+  display: inline-block;
+}
+
 .badge {
   position: absolute;
-  bottom: 0;   /* lo pegás abajo */
-  right: 0;    /* y a la derecha */
-  transform: translate(40%, 40%); /* lo corrés un poco hacia afuera */
+  bottom: 0; 
+  right: 0;
+  transform: translate(40%, 40%);
 
   background: linear-gradient(135deg, #a446f4, #5a7cf6);
   color: white;
