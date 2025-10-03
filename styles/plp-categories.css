@@ -20,6 +20,7 @@
 }
 
 .category-container {
+    position: relative;
     width: 40%;
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
@@ -30,9 +31,11 @@
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .category{
+    position: absolute;
     border: 0;
     display: flex;
     align-items: center;
@@ -45,6 +48,7 @@
     gap: 4px;
     opacity: 1;
     padding: 16px;
+    cursor: pointer;
 }
 
 
@@ -62,22 +66,22 @@
 
 
 
-#mens-clothing{
+.mens-clothing{
     background-image: url(https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png);
     background-size: cover;
 }
 
-#womens-clothing{
+.womens-clothing{
     background-image: url(https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png);
     background-size: cover;
 }
 
-#electronics {
+.electronics {
     background-image: url(https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png);
     background-size: cover;
 }
 
-#jewelry{
+.jewelery{
     background-image: url(https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png);
     background-size: cover;
 }

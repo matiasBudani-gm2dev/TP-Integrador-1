@@ -83,34 +83,38 @@
         </div>
     </header>
 
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul id="breadcrumb"></ul>
+    </nav>
+
     <section class="categories">
         <h3 class="categories-filter-title">Filtrar por categoría</h3>
 
         <div class="categories-container">
-            <div id="mens-clothing" class="category-container">
-                <button class="category">
+            <button onclick="filterByCategory(this.id)" id="men's clothing" class="category-container mens-clothing">
+                <div class="category">
                     <p>MEN'S CLOTHING</p>
                     <img src="/assets/Remix icons.svg" alt="">
-                </button>
-            </div>
+                </div>
+            </button>
 
-            <div id="womens-clothing" class="category-container">
-                <button class="category">
+            <button onclick="filterByCategory(this.id)" id="women's clothing" class="category-container womens-clothing">
+                <div class="category">
                     <p>WOMEN'S CLOTHING</p>
                     <img src="/assets/Remix icons.svg" alt="">
 
-                </button>
-            </div>
+                </div>
+            </button>
 
-            <div id="electronics" class="category-container">
-                <button class="category">
+            <button onclick="filterByCategory(this.id)" id="electronics" class="category-container electronics">
+                <div class="category">
                     <p>ELECTRONICS</p>
                     <img src="/assets/Remix icons.svg" alt="">
                 </div>
             </button>
 
-            <div id="jewelry" class="category-container">
-                <button class="category">
+            <button onclick="filterByCategory(this.id)" id="jewelery" class="category-container   jewelery">
+                <div class="category">
                     <p>JEWELRY</p>
                     <img src="/assets/Remix icons.svg" alt="">
                 </div>
@@ -118,10 +122,6 @@
         </div>
     </section>
     <main>
-
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ul id="breadcrumb"></ul>
-        </nav>
 
         <section class="listing-products">
 
@@ -148,29 +148,65 @@
                             </label>
                         </div>
                         <div class="selected-filters">
-                            <div class="selected"></div>
                         </div>
-                        <div class="filter-tags"></div>
-                        <button class="filter-acordion">
-                            <p>Talla</p>
-                            <img src="/assets/Remix icons.svg" alt="">
-                        </button>
-                        <div class="filters">
+                        <div class="filter-tags">
 
-                            <button id="talle-L" class="filter">
-                                <img src="/assets//unchecked box.svg" alt="">
-                                <p>L (8)</p>
-                            </button>
 
-                            <button id="talle-M" class="filter">
-                                <img src="/assets//unchecked box.svg" alt="">
-                                <p>M (12)</p>
-                            </button>
+                            <div class="filter-size">
 
-                            <button id="talle-S" class="filter">
-                                <img src="/assets//unchecked box.svg" alt="">
-                                <p>S (5)</p>
-                            </button>
+
+                                <input type="checkbox" id="show-filter-size-accordion" class="show-filter-accordion">
+                                <label for="show-filter-size-accordion" class="filter-acordion">
+                                    <p>Talla</p>
+                                    <img src="/assets/Remix icons.svg" alt="">
+                                </label>
+
+
+                                <div class="filters">
+                                    <button id="L-size" class="filter">
+                                        <img src="/assets//unchecked box.svg" alt="">
+                                        <p>L (5)</p>
+                                    </button>
+
+                                    <button id="M-size" class="filter">
+                                        <img src="/assets//unchecked box.svg" alt="">
+                                        <p>M (8)</p>
+                                    </button>
+
+                                    <button id="S-size" class="filter">
+                                        <img src="/assets//unchecked box.svg" alt="">
+                                        <p>S (7)</p>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <div class="filter-color">
+                                <input type="checkbox" id="show-filter-color-accordion" class="show-filter-accordion">
+                                <label for="show-filter-color-accordion" class="filter-acordion">
+                                    <p>Color</p>
+                                    <img src="/assets/Remix icons.svg" alt="">
+                                </label>
+                            </div>
+
+
+                            <div class="filter-price">
+                                <input type="checkbox" id="show-filter-price-accordion" class="show-filter-accordion">
+                                <label for="show-filter-price-accordion" class="filter-acordion">
+                                    <p>Price</p>
+                                    <img src="/assets/Remix icons.svg" alt="">
+                                </label>
+                            </div>
+
+
+                            <div class="filter-availability">
+                                <input type="checkbox" id="show-filter-availability-accordion" class="show-filter-accordion">
+                                <label for="show-filter-availability-accordion" class="filter-acordion">
+                                    <p>Disponibilidad</p>
+                                    <img src="/assets/Remix icons.svg" alt="">
+                                </label>
+                            </div>
+
 
                         </div>
                     </div>
@@ -190,6 +226,6 @@
 <script src="../scripts/breadcrumb.js"></script>
 <script type="module" src="../scripts/listing-products.js"></script>
 <script type="module" src="../scripts/cart-wishlist.js"></script>
-<script type="module" src="../scripts/filters.js"></script>
+<script src="../scripts/filters.js"></script>
 
 </html>
