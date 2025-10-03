@@ -225,6 +225,7 @@ main {
   height: 20px;
   margin-top: 20px;
   margin-left: -42px;
+  margin-top: 25px;
 }
 .clients-img3 p {
   display: flex;
@@ -233,9 +234,15 @@ main {
 }
 .clients-img3 .verified {
   height: 20px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
-
+.recommend-lucia {
+  margin-top: 60px;
+  margin-left: -200px;
+}
+.lu {
+  margin-top: 20px;
+}
 .delivery {
   background: #e4e4e4;
   display: flex;
