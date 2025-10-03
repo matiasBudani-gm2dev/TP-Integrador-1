@@ -5,6 +5,7 @@ import { wireHeaderSearch } from "./search-header.js";
 async function init() {
   // 1. Traer productos
   const products = await getProducts();
+  
   const params = new URLSearchParams(window.location.search);
   const q = (params.get("search") || "").toLowerCase().trim();
 
