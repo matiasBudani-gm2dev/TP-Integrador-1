@@ -2,16 +2,27 @@ import { getProducts, displayProducts, updateProductCount } from "./listing-prod
 import { updateCartCount, updateWishlistCount, toggleCart, toggleWishlist, syncButtonsFromStorage } from "./cart-wishlist.js";
 import { wireHeaderSearch } from "./search-header.js";
 
-// 🧠 Hacer productos accesibles desde otras funciones
+// ✅ importar desde filters.js
+import {
+  setProducts,
+  filterByCategory,
+  filterBySize,
+  showAllProducts,
+  showSelected,
+  deleteSelected
+} from "./filters.js";
+
+// 🧠 Estado local solo si lo necesitás acá (p.ej. para buscador)
 let cachedProducts = [];
-let countSelected = 0;
-let selectedSizes = [];
 
 async function init() {
   // 1. Traer productos
   cachedProducts = await getProducts();
   displayProducts(cachedProducts);
   updateProductCount(cachedProducts.length);
+
+  // 👉 pasar productos al módulo de filtros
+  setProducts(cachedProducts);
 
   // 2. Marcar botones según localStorage
   syncButtonsFromStorage();
@@ -39,7 +50,7 @@ async function init() {
   // 5. Buscador global
   wireHeaderSearch?.();
 
-  // 6. Listener para búsqueda dinámica
+  // 6. Listener para búsqueda dinámica (no cambia)
   document.addEventListener("header:search", (ev) => {
     const q = ev.detail.q.toLowerCase();
     const filtered = cachedProducts.filter((p) =>
@@ -51,120 +62,11 @@ async function init() {
   });
 }
 
-// ✅ Mostrar todos los productos
-function showAllProducts() {
-  displayProducts(cachedProducts);
-  updateProductCount(cachedProducts.length);
-  syncButtonsFromStorage();
-}
+// ✅ Exponer funciones globales (si las usa tu HTML con onclick=... )
+window.filterByCategory = filterByCategory;
+window.filterBySize = filterBySize;
+window.showAllProducts = showAllProducts;
+window.showSelected = showSelected;
+window.deleteSelected = deleteSelected;
 
-// ✅ Filtro por categoría
-function filterByCategory(category) {
-  const filtered = cachedProducts.filter((prod) => prod.category === category);
-  displayProducts(filtered);
-  updateProductCount(filtered.length);
-  syncButtonsFromStorage();
-}
-
-function filterBySize(idSize) {
-
-  const size = document.getElementById(idSize + "-size")
-    const img = size.querySelector("img")
-    if(img.getAttribute('src') === "/assets//unchecked box.svg"){
-        img.setAttribute('src',"/assets//checked box.svg")
-        countSelected++
-    }else{
-        img.setAttribute('src',"/assets//unchecked box.svg")
-        countSelected--
-    }
-
-  const index = selectedSizes.indexOf(idSize);
-
-  if (index === -1) {
-    selectedSizes.push(idSize); 
-  } else {
-    selectedSizes.splice(index, 1);
-  }
-
-  const filtered = cachedProducts.filter((prod) =>
-    prod.category.includes("clothing")
-  );
-
-  displayProducts(filtered);
-  updateProductCount(filtered.length);
-  syncButtonsFromStorage()
-  showSelected()
-}
-
-function deleteSelected(){
-    const buttons = document.querySelectorAll(".filters button")
-    buttons.forEach((button)=>{
-        const buttonImage = button.querySelector("img")
-        buttonImage.setAttribute('src',"/assets//unchecked box.svg")
-    })
-    countSelected = 0
-    selectedSizes = [];
-    showSelected()
-}
-
-
-function showSelected() {
-  const existingSelected = document.querySelector(".selected");
-  const selectedFilters = document.querySelector(".selected-filters");
-
-  const updateSizes = document.querySelector(".selected-sizes");
-  if (updateSizes) updateSizes.remove();
-
-  if (countSelected !== 0) {
-    let selected = existingSelected;
-
-    if (!selected) {
-      selected = document.createElement("div");
-      selected.className = "selected";
-      selectedFilters.appendChild(selected);
-    }
-
-    selected.innerHTML = `
-      <p class="count-selected">${countSelected} selected</p>
-      <button onclick="deleteSelected()" class="delete-selected">Borrar todo</button>
-    `;
-
-    if (selectedSizes.length !== 0) {
-      const selectedSizesContainer = document.createElement("div");
-      selectedSizesContainer.className = "selected-sizes";
-
-      selectedSizes.forEach((size) => {
-        const sizeElement = document.createElement("div");
-        sizeElement.className = "selected-size-item";
-
-        sizeElement.innerHTML = `
-        <div class="show-selected-sizes">
-          <p>${size}</p>
-          <img src="/assets/Dawn icons.svg" id="${size}" alt="Eliminar" />
-        </div>
-        `;
-
-        selectedSizesContainer.appendChild(sizeElement);
-      });
-
-      selectedFilters.appendChild(selectedSizesContainer);
-    }
-
-  } else if (countSelected === 0 && existingSelected) {
-    existingSelected.remove();
-    selectedSizes = [];
-    init();
-  }
-}
-
-
-
-
-// ✅ Exponer funciones globales
-window.filterByCategory = filterByCategory
-window.filterBySize = filterBySize
-window.showAllProducts = showAllProducts
-window.showSelected = showSelected
-window.deleteSelected = deleteSelected
-
-document.addEventListener("DOMContentLoaded", init)
+document.addEventListener("DOMContentLoaded", init);
