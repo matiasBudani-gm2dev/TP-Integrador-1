@@ -4,7 +4,7 @@ export async function getProducts() {
   try {
     const response = await fetch(`${URL_API_FAKE_STORE}/products`)
     let data = await response.json();
-    if (data.lenght === 0) return [];
+    if (data.length === 0) return [];
     return data;
   } catch (error) {
     console.error('Error fetching products:', error);
