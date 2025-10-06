@@ -6,9 +6,6 @@
     display: none;
 }
 
-#order-by-label h5{
-    display: none;
-}
 
 .order-by-container{
     position: fixed;
@@ -18,6 +15,8 @@
     height: 100vh;
     background-color: white;
     z-index: 1;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 .order-by-header{
@@ -26,12 +25,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;   
-}
-
-@media (max-width: 767px){
-    #order-by-input:checked ~ .order-by-container{
-        display: fixed;
-    }
 }
 
 @media (min-width: 768px){
@@ -52,7 +45,13 @@
     }
 
     .order-by-container{
-        display: flex;
+        position: static;
+        display: none;
+        width: 100px;
+        height: 80px;
     }
 
+    .order-by-header {
+        display: none;
+    }
 }

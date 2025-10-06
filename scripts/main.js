@@ -3,6 +3,7 @@ import { getProducts, displayProducts, updateProductCount } from "./listing-prod
 import { updateCartCount, updateWishlistCount, toggleCart, toggleWishlist, syncButtonsFromStorage } from "./cart-wishlist.js";
 import { wireHeaderSearch } from "./search-header.js";
 import { priceValidation } from "./priceValidation.js";
+import { checkOrderByInput } from "./order-by.js"
 
 import {
   showSelectedFilters,
@@ -69,6 +70,7 @@ async function init() {
     const okMax = max == null || p.price <= max;
     return okMin && okMax;
   });
+
   displayProducts(out);
   updateProductCount(out.length);
   syncButtonsFromStorage();
@@ -78,6 +80,13 @@ async function init() {
   priceValidation("#minPrice, #maxPrice", {
     pair: { a: "#minPrice", b: "#maxPrice", message: "El mínimo no puede ser mayor que el máximo." }
   });
+
+  const orderByCheckbox = document.getElementById("order-by-input");
+  if (orderByCheckbox) {
+    orderByCheckbox.addEventListener("click", (event) => {
+      checkOrderByInput(event);
+    });
+}
 }
 
 // Exponer si tu HTML usa onclick=...
@@ -88,6 +97,7 @@ window.filterByDisponibility = filterByDisponibility
 window.showAllProducts = showAllProducts;
 window.showSelectedSizes = showSelectedSizes;
 window.deleteSelected = deleteSelected;
+window.checkOrderByInput = checkOrderByInput
 
 // init al cargar DOM
 document.addEventListener("DOMContentLoaded", init);
