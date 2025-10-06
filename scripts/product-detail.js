@@ -1,5 +1,5 @@
 const URL = "https://fakestoreapi.com/products";
-let item = 16;
+let item = 5;
 
 fetch(`${URL}/${item}`)
   .then((res) => res.json())
