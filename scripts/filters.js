@@ -15,7 +15,6 @@ const selectedDisponibility = new Set()
 
 export function showSelectedFilters(list) {
   products = Array.isArray(list) ? list : []
-  console.log(products)
   products.forEach((prod)=>{
     if(prod.category.includes("clothing")){
 
