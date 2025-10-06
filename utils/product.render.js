@@ -11,6 +11,7 @@ export function createProductCard(product) {
       <h3 class="product-title">${product.title}</h3>
       <p class="product-price">$${product.price}</p>
     </div>
+    </a>
 
     <button class="add-to-cart-btn btn-card">
       <img src="../assets/cart-icon.svg" alt="Add to Cart">
@@ -19,7 +20,6 @@ export function createProductCard(product) {
     <button class="add-to-wishlist-btn btn-card">
       <img src="../assets/wishlist-icon.svg" alt="Add to Wishlist">
     </button>
-    </a>
      `;
   return productCard;
 }

@@ -1,5 +1,6 @@
 const URL = "https://fakestoreapi.com/products";
-let item = 5;
+const params = new URLSearchParams(window.location.search);
+let item = params.get("item")
 
 fetch(`${URL}/${item}`)
   .then((res) => res.json())
