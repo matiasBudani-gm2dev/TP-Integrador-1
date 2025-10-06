@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/product-listing-page.css">
     <link rel="stylesheet" href="/styles/plp-categories.css">
+    <link rel="stylesheet" href="/styles/order-by.css">
     <title>Document</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,98 +126,140 @@
 
         <section class="listing-products">
 
-            <div class="listing-header">
+  <input type="checkbox" id="filter-input" class="show-filter-accordion" />
+  <input type="checkbox" id="order-by-input" class="show-filter-accordion" />
+
+  <div class="listing-grid">
+    <aside class="filter-drawer">
+      <div class="filter-drawer-header">
+        <h3>FILTROS</h3>
+        <label for="filter-input" class="close-filter-drawer">
+          <img src="/assets/Dawn icons.svg" alt="">
+        </label>
+    
+      </div>
+
+      <div class="selected-filters"></div>
+
+      <div class="filter-tags">
+
+        <div class="filter-size">
+          <input type="checkbox" id="show-filter-size-accordion" class="show-filter-accordion">
+          <label for="show-filter-size-accordion" class="filter-acordion">
+            <p>Talla</p>
+            <img src="/assets/Remix icons.svg" alt="">
+          </label>
+          <div class="filters">
+            <button id="L" class="filter" onclick="filterBySize(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>L (5)</p>
+            </button>
+            <button id="M" class="filter" onclick="filterBySize(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>M (8)</p>
+            </button>
+            <button id="S" class="filter" onclick="filterBySize(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>S (7)</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-color">
+            <input type="checkbox" id="show-filter-color-accordion" class="show-filter-accordion">
+          <label for="show-filter-color-accordion" class="filter-acordion">
+            <p>Color</p>
+            <img src="/assets/Remix icons.svg" alt="">
+          </label>
+          <div class="filters">
+            <button id="Todos" class="filter" onclick="filterByColor(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>Todos</p>
+            </button>
+            <button id="Blanca" class="filter" onclick="filterByColor(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>Blanca</p>
+            </button>
+            <button id="Negra" class="filter" onclick="filterByColor(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>Negra</p>
+            </button>
+            <button id="Personalizada" class="filter" onclick="filterByColor(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>Personalizada</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-price">
+          <input type="checkbox" id="show-filter-price-accordion" class="show-filter-accordion">
+          <label for="show-filter-price-accordion" class="filter-acordion">
+            <p>Price</p>
+            <img src="/assets/Remix icons.svg" alt="">
+          </label>
+
+
+
+          <div class="filters">
+            <h6 class="price-title">Precio</h6>
+            <input type="text" id="minPrice" inputmode="decimal" placeholder="DESDE">
+            <h6 class="price-title">Precio Máximo</h6>
+            <input type="text" id="maxPrice" inputmode="decimal" placeholder="HASTA">
+          </div>
+        </div>
+
+        <div class="filter-disponibility">
+          <input type="checkbox" id="show-filter-disponibility-accordion" class="show-filter-accordion">
+          <label for="show-filter-disponibility-accordion" class="filter-acordion">
+            <p>Disponibilidad</p>
+            <img src="/assets/Remix icons.svg" alt="">
+          </label>
+          <div class="filters">
+            <button id="Inmediata" class="filter" onclick="filterByDisponibility(this.id)">
+              <img src="/assets//unchecked box.svg" alt="">
+              <p>Inmediata</p>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <div class="products-listing-header">
+        <div class="listing-header">
                 <p><span class="product-count">...</span> productos</p>
 
-
                 <div class="filter-section">
-                    <input type="checkbox" name="filter" id="filter-input">
-                    <input type="checkbox" name="order-by" id="order-by-input">
-                    <label for="filter-input" id="filter-label" class="filter-option">
-                        <img src="/assets/filter Icon.svg" alt="">
-                        <p>Filtros</p>
-                    </label>
-                    <label for="order-by-input" id="order-by-label" class="filter-option">
-                        <img src="/assets/sort-desc.svg" alt="">
-                        <p>Organizar por</p>
-                    </label>
-                    <div class="filter-drawer">
-                        <div class="filter-drawer-header">
-                            <h3>FILTROS</h3>
-                            <label for="filter-input">
-                                <img src="/assets/Dawn icons.svg" alt="">
-                            </label>
-                        </div>
-                        <div class="selected-filters">
-                        </div>
-                        <div class="filter-tags">
+                <label for="filter-input" id="filter-label" class="filter-option">
+                    <img src="/assets/filter Icon.svg" alt="">
+                    <h5>Filtros</h5>
+                </label>
 
-
-                            <div class="filter-size">
-
-
-                                <input type="checkbox" id="show-filter-size-accordion" class="show-filter-accordion">
-                                <label for="show-filter-size-accordion" class="filter-acordion">
-                                    <p>Talla</p>
-                                    <img src="/assets/Remix icons.svg" alt="">
-                                </label>
-
-
-                                <div class="filters">
-                                    <button id="L-size" class="filter">
-                                        <img src="/assets//unchecked box.svg" alt="">
-                                        <p>L (5)</p>
-                                    </button>
-
-                                    <button id="M-size" class="filter">
-                                        <img src="/assets//unchecked box.svg" alt="">
-                                        <p>M (8)</p>
-                                    </button>
-
-                                    <button id="S-size" class="filter">
-                                        <img src="/assets//unchecked box.svg" alt="">
-                                        <p>S (7)</p>
-                                    </button>
-                                </div>
-                            </div>
-
-
-                            <div class="filter-color">
-                                <input type="checkbox" id="show-filter-color-accordion" class="show-filter-accordion">
-                                <label for="show-filter-color-accordion" class="filter-acordion">
-                                    <p>Color</p>
-                                    <img src="/assets/Remix icons.svg" alt="">
-                                </label>
-                            </div>
-
-
-                            <div class="filter-price">
-                                <input type="checkbox" id="show-filter-price-accordion" class="show-filter-accordion">
-                                <label for="show-filter-price-accordion" class="filter-acordion">
-                                    <p>Price</p>
-                                    <img src="/assets/Remix icons.svg" alt="">
-                                </label>
-                            </div>
-
-
-                            <div class="filter-availability">
-                                <input type="checkbox" id="show-filter-availability-accordion" class="show-filter-accordion">
-                                <label for="show-filter-availability-accordion" class="filter-acordion">
-                                    <p>Disponibilidad</p>
-                                    <img src="/assets/Remix icons.svg" alt="">
-                                </label>
-                            </div>
-
-
-                        </div>
+                <p class="order-by-desktop-text">Organizar por</p>
+                <label for="order-by-input" id="order-by-label" class="filter-option">
+                    <img class="order-by-logo" src="/assets/sort-desc.svg" alt="">
+                    <h5>Organizar por</h5>
+                    <div class="order-by-option-selected">
+                        <p class="order-by-option-selected-text">Organizar...</p>
+                        <img src="/assets/Remix icons.svg" alt="">
                     </div>
+                    <div class="order-by-container">
+                        <div class="order-by-header">
+                            <h4 class="order-by-container-title">ORGANIZAR POR</h4>
+                            <img src="/assets/Dawn icons.svg" alt="">
+                        </div>
+                        
+
+                    </div>
+                </label>
                 </div>
             </div>
 
-            <div id="products-container">
+        <div id="products-container"></div>
+    </div>
+  </div>
+</section>
 
-            </div>
-        </section>
     </main>
 
 </body>
