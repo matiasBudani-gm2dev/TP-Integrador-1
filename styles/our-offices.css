@@ -1,91 +1,56 @@
-*{
-    box-sizing:border-box
-}
-html,body{
-    height:100%
+:root{
+  --bg:#0b0b0b;
+  --muted:#bfbfbf;
+  --accent:#c33df4;
+  --white:#ffffff;
+  --max-width:420px;
 }
 body{
-    margin:0;
-    background:#000;
-    color:#f1f1f1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  margin:0;
+  font-family: "Work Sans", system-ui, sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:24px;
+  min-height:100vh;
+  box-sizing:border-box;
 }
 
-.switcher{
-    max-width:760px;
-    width:100%;
-    padding:32px;
-    outline:1px solid #3a3a3a;
-    background:#000;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:24px;
+.our-offices-container{
+  width:100%;
+  max-width:var(--max-width);
+  background:transparent;
+  align-items: center;
 }
 
-.switcher input{
-    position:absolute;
-    left:-9999px;
+.images-our-offices{
+  width:100%;
+  max-width:100%;
+  display:block;
+  object-fit:cover;
+  margin:0 auto;
+}
+.about-us{
+  padding:28px 6px 36px;
 }
 
-.our-offices,.our-team{
-    display:none;
-    text-align:center
+.about-us h5{
+  color:var(--accent);
+  font-weight:600;
+  letter-spacing:2px;
+  margin:0 0 12px 2px;
+  font-size:14px;
 }
 
-.views h2{
-    font-size:24px;
-    margin:0 0 16px
-}
-.views p{
-    line-height:1.6;
-    margin:0 0 20px
-}
-.views a{
-    display:inline-block;
-    text-decoration:none;
-    text-transform:uppercase;
-    letter-spacing:.16em;
-    font-weight:600;
-    color:#f1f1f1
+.about-us h3{
+  font-size:34px;
+  line-height:1;
+  margin:0 0 18px;
+  letter-spacing:4px;
+  font-weight:600;
 }
 
-.offices:checked ~ .views .our-offices{
-    display:block
-}
-.team:checked    ~ .views .our-team{
-    display:block
-}
-
-.controls{
-    display:flex;
-    justify-content:center;
-    gap:12px
-}
-.controls label{
-    width:22px;
-    height:22px;
-    border:2px solid #fff;
-    cursor:pointer
-}
-
-#tab-offices:checked ~ .controls label[for="tab-offices"],
-#tab-team:checked    ~ .controls label[for="tab-team"]{
-    background:#fff
-}
-
-.controls label:focus{
-    outline:2px solid #8ab4ff;
-    outline-offset:2px
-}
-
-.our img {
-    width: 528px;
-    height: 468px;
-    object-fit: cover;
-    border-radius:8px;
-    margin-bottom:16px;
-    object-position: left;
-}
