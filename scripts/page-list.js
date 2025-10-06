@@ -5,6 +5,6 @@ const path = window.location.pathname;
 
 if (path.includes("index") || path === "/") {
   document.querySelector(".page-home")?.classList.add("selected-page");
-} else if (path.includes("productos")) {
+} else if (path.includes("product-listing-page.html")) {
   document.querySelector(".page-productos")?.classList.add("selected-page");
 }
