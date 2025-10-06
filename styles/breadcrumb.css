@@ -1,0 +1,50 @@
+.breadcrumb {
+  padding: 10px 15px;
+}
+
+.breadcrumb ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.breadcrumb li + li::before {
+  content: ">";
+  margin: 0 0.5rem;
+  color: #888;
+
+  text-decoration: none;
+font-weight: 300;
+font-size: 13px;
+line-height: 150%;
+letter-spacing: 3%;
+text-align: center;
+vertical-align: middle;
+}
+
+.breadcrumb li a, span {
+  text-decoration: none;
+font-weight: 300;
+font-size: 13px;
+line-height: 150%;
+letter-spacing: 3%;
+text-align: center;
+vertical-align: middle;
+
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb li .current {
+    font-family: Work Sans;
+font-weight: 400;
+font-style: Regular;
+font-size: 13px;
+line-height: 100%;
+letter-spacing: 3%;
+text-align: center;
+vertical-align: middle;
+}
