@@ -8,7 +8,6 @@ const segmentMap = {
   "product-listing-page.html": "Productos"
 };
 
-
 breadcrumb.innerHTML = "";
 
 const homeLi = document.createElement("li");

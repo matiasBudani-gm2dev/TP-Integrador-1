@@ -42,9 +42,7 @@
 
                 <div class="search-bar">
                     <label for="search-input">
-                        <img src="/assets/search-icon.svg"
-                            alt="Magnifying glass icon representing search function in website navigation bar, surrounded by clean modern interface elements"
-                            class="search-icon desktop-only">
+                        <img src="/assets/search-icon.svg" alt="" class="search-icon desktop-only">
                     </label>
                     <input type="text" list="search-suggestions" id="search-input" placeholder="¿Qué estás buscando?"
                         class="desktop-only">
@@ -63,14 +61,14 @@
 
             <div class="right">
                 <img src="/assets/search-icon.svg" alt="Buscar" class="search-icon mobile-only">
-                <div class="cart">
+                <a href="./cart.html" class="cart">
                     <img src="/assets/cart-icon.svg" alt="Carrito" class="cart-icon">
                     <span class="badge" id="cart-count"></span>
-                </div>
+                </a>
                 <img src="/assets/profile-icon.svg" alt="Profile" class="profile-icon desktop-only">
                 <div class="wishlist">
                     <img src="/assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only">
-                    <span class="badge" id="wishlist-count"></span>
+                    <span class="badge desktop-only" id="wishlist-count"></span>
                 </div>
             </div>
 
@@ -99,7 +97,8 @@
                 </div>
             </button>
 
-            <button onclick="filterByCategory(this.id)" id="women's clothing" class="category-container womens-clothing">
+            <button onclick="filterByCategory(this.id)" id="women's clothing"
+                class="category-container womens-clothing">
                 <div class="category">
                     <p>WOMEN'S CLOTHING</p>
                     <img src="/assets/Remix icons.svg" alt="">
@@ -126,139 +125,140 @@
 
         <section class="listing-products">
 
-  <input type="checkbox" id="filter-input" class="show-filter-accordion" />
-  <input type="checkbox" id="order-by-input" class="show-filter-accordion" />
+            <input type="checkbox" id="filter-input" class="show-filter-accordion" />
+            <input type="checkbox" id="order-by-input" class="show-filter-accordion" />
 
-  <div class="listing-grid">
-    <aside class="filter-drawer">
-      <div class="filter-drawer-header">
-        <h3>FILTROS</h3>
-        <label for="filter-input" class="close-filter-drawer">
-          <img src="/assets/Dawn icons.svg" alt="">
-        </label>
-    
-      </div>
-
-      <div class="selected-filters"></div>
-
-      <div class="filter-tags">
-
-        <div class="filter-size">
-          <input type="checkbox" id="show-filter-size-accordion" class="show-filter-accordion">
-          <label for="show-filter-size-accordion" class="filter-acordion">
-            <p>Talla</p>
-            <img src="/assets/Remix icons.svg" alt="">
-          </label>
-          <div class="filters">
-            <button id="L" class="filter" onclick="filterBySize(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>L (5)</p>
-            </button>
-            <button id="M" class="filter" onclick="filterBySize(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>M (8)</p>
-            </button>
-            <button id="S" class="filter" onclick="filterBySize(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>S (7)</p>
-            </button>
-          </div>
-        </div>
-
-        <div class="filter-color">
-            <input type="checkbox" id="show-filter-color-accordion" class="show-filter-accordion">
-          <label for="show-filter-color-accordion" class="filter-acordion">
-            <p>Color</p>
-            <img src="/assets/Remix icons.svg" alt="">
-          </label>
-          <div class="filters">
-            <button id="Todos" class="filter" onclick="filterByColor(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>Todos</p>
-            </button>
-            <button id="Blanca" class="filter" onclick="filterByColor(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>Blanca</p>
-            </button>
-            <button id="Negra" class="filter" onclick="filterByColor(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>Negra</p>
-            </button>
-            <button id="Personalizada" class="filter" onclick="filterByColor(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>Personalizada</p>
-            </button>
-          </div>
-        </div>
-
-        <div class="filter-price">
-          <input type="checkbox" id="show-filter-price-accordion" class="show-filter-accordion">
-          <label for="show-filter-price-accordion" class="filter-acordion">
-            <p>Price</p>
-            <img src="/assets/Remix icons.svg" alt="">
-          </label>
-
-
-
-          <div class="filters">
-            <h6 class="price-title">Precio</h6>
-            <input type="text" id="minPrice" inputmode="decimal" placeholder="DESDE">
-            <h6 class="price-title">Precio Máximo</h6>
-            <input type="text" id="maxPrice" inputmode="decimal" placeholder="HASTA">
-          </div>
-        </div>
-
-        <div class="filter-disponibility">
-          <input type="checkbox" id="show-filter-disponibility-accordion" class="show-filter-accordion">
-          <label for="show-filter-disponibility-accordion" class="filter-acordion">
-            <p>Disponibilidad</p>
-            <img src="/assets/Remix icons.svg" alt="">
-          </label>
-          <div class="filters">
-            <button id="Inmediata" class="filter" onclick="filterByDisponibility(this.id)">
-              <img src="/assets//unchecked box.svg" alt="">
-              <p>Inmediata</p>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </aside>
-
-    <div class="products-listing-header">
-        <div class="listing-header">
-                <p><span class="product-count">...</span> productos</p>
-
-                <div class="filter-section">
-                <label for="filter-input" id="filter-label" class="filter-option">
-                    <img src="/assets/filter Icon.svg" alt="">
-                    <h5>Filtros</h5>
-                </label>
-
-                <p class="order-by-desktop-text">Organizar por</p>
-                <label for="order-by-input" id="order-by-label" class="filter-option">
-                    <img class="order-by-logo" src="/assets/sort-desc.svg" alt="">
-                    <h5>Organizar por</h5>
-                    <div class="order-by-option-selected">
-                        <p class="order-by-option-selected-text">Organizar...</p>
-                        <img src="/assets/Remix icons.svg" alt="">
-                    </div>
-                    <div class="order-by-container">
-                        <div class="order-by-header">
-                            <h4 class="order-by-container-title">ORGANIZAR POR</h4>
+            <div class="listing-grid">
+                <aside class="filter-drawer">
+                    <div class="filter-drawer-header">
+                        <h3>FILTROS</h3>
+                        <label for="filter-input" class="close-filter-drawer">
                             <img src="/assets/Dawn icons.svg" alt="">
-                        </div>
-                        
+                        </label>
 
                     </div>
-                </label>
+
+                    <div class="selected-filters"></div>
+
+                    <div class="filter-tags">
+
+                        <div class="filter-size">
+                            <input type="checkbox" id="show-filter-size-accordion" class="show-filter-accordion">
+                            <label for="show-filter-size-accordion" class="filter-acordion">
+                                <p>Talla</p>
+                                <img src="/assets/Remix icons.svg" alt="">
+                            </label>
+                            <div class="filters">
+                                <button id="L" class="filter" onclick="filterBySize(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>L (5)</p>
+                                </button>
+                                <button id="M" class="filter" onclick="filterBySize(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>M (8)</p>
+                                </button>
+                                <button id="S" class="filter" onclick="filterBySize(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>S (7)</p>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="filter-color">
+                            <input type="checkbox" id="show-filter-color-accordion" class="show-filter-accordion">
+                            <label for="show-filter-color-accordion" class="filter-acordion">
+                                <p>Color</p>
+                                <img src="/assets/Remix icons.svg" alt="">
+                            </label>
+                            <div class="filters">
+                                <button id="Todos" class="filter" onclick="filterByColor(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>Todos</p>
+                                </button>
+                                <button id="Blanca" class="filter" onclick="filterByColor(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>Blanca</p>
+                                </button>
+                                <button id="Negra" class="filter" onclick="filterByColor(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>Negra</p>
+                                </button>
+                                <button id="Personalizada" class="filter" onclick="filterByColor(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>Personalizada</p>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="filter-price">
+                            <input type="checkbox" id="show-filter-price-accordion" class="show-filter-accordion">
+                            <label for="show-filter-price-accordion" class="filter-acordion">
+                                <p>Price</p>
+                                <img src="/assets/Remix icons.svg" alt="">
+                            </label>
+
+
+
+                            <div class="filters">
+                                <h6 class="price-title">Precio</h6>
+                                <input type="text" id="minPrice" inputmode="decimal" placeholder="DESDE">
+                                <h6 class="price-title">Precio Máximo</h6>
+                                <input type="text" id="maxPrice" inputmode="decimal" placeholder="HASTA">
+                            </div>
+                        </div>
+
+                        <div class="filter-disponibility">
+                            <input type="checkbox" id="show-filter-disponibility-accordion"
+                                class="show-filter-accordion">
+                            <label for="show-filter-disponibility-accordion" class="filter-acordion">
+                                <p>Disponibilidad</p>
+                                <img src="/assets/Remix icons.svg" alt="">
+                            </label>
+                            <div class="filters">
+                                <button id="Inmediata" class="filter" onclick="filterByDisponibility(this.id)">
+                                    <img src="/assets//unchecked box.svg" alt="">
+                                    <p>Inmediata</p>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+
+                <div class="products-listing-header">
+                    <div class="listing-header">
+                        <p><span class="product-count">...</span> productos</p>
+
+                        <div class="filter-section">
+                            <label for="filter-input" id="filter-label" class="filter-option">
+                                <img src="/assets/filter Icon.svg" alt="">
+                                <h5>Filtros</h5>
+                            </label>
+
+                            <p class="order-by-desktop-text">Organizar por</p>
+                            <label for="order-by-input" id="order-by-label" class="filter-option">
+                                <img class="order-by-logo" src="/assets/sort-desc.svg" alt="">
+                                <h5>Organizar por</h5>
+                                <div class="order-by-option-selected">
+                                    <p class="order-by-option-selected-text">Organizar...</p>
+                                    <img src="/assets/Remix icons.svg" alt="">
+                                </div>
+                                <div class="order-by-container">
+                                    <div class="order-by-header">
+                                        <h4 class="order-by-container-title">ORGANIZAR POR</h4>
+                                        <img src="/assets/Dawn icons.svg" alt="">
+                                    </div>
+
+
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="products-container"></div>
                 </div>
             </div>
-
-        <div id="products-container"></div>
-    </div>
-  </div>
-</section>
+        </section>
 
     </main>
 
