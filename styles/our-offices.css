@@ -1,56 +1,158 @@
-:root{
-  --bg:#0b0b0b;
-  --muted:#bfbfbf;
-  --accent:#c33df4;
-  --white:#ffffff;
-  --max-width:420px;
+:root {
+  --bg: #0b0b0b;
+  --muted: #bfbfbf;
+  --accent: #c33df4;
+  --white: #ffffff;
+  --max-width-mobile: 375px;
+  --max-width-desktop: 900px;
 }
-body{
-  margin:0;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
   font-family: "Work Sans", system-ui, sans-serif;
-  background:var(--bg);
-  color:var(--white);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  padding:24px;
-  min-height:100vh;
-  box-sizing:border-box;
+  background: var(--bg);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 24px;
 }
 
-.our-offices-container{
-  width:100%;
-  max-width:var(--max-width);
-  background:transparent;
+.our-offices-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--max-width-mobile);
+  background: #000;
+  overflow: hidden;
+}
+
+.images-our-offices {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border: none;
+  padding: 16px;
+}
+
+.about-us {
+  padding: 16px;
+}
+
+.about-us h5 {
+  color: var(--accent);
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 2%;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.about-us h3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 8%;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.about-us p {
+  color: var(--muted);
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 4%;
+  vertical-align: middle;
+}
+
+.button-about-us {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.images-our-offices{
-  width:100%;
-  max-width:100%;
-  display:block;
-  object-fit:cover;
-  margin:0 auto;
-}
-.about-us{
-  padding:28px 6px 36px;
+.button-about-us:hover {
+  color: var(--accent);
+  transform: translateX(3px);
 }
 
-.about-us h5{
-  color:var(--accent);
-  font-weight:600;
-  letter-spacing:2px;
-  margin:0 0 12px 2px;
-  font-size:14px;
+.arrow {
+  font-size: 18px;
+  line-height: 1;
 }
 
-.about-us h3{
-  font-size:34px;
-  line-height:1;
-  margin:0 0 18px;
-  letter-spacing:4px;
-  font-weight:600;
+.theme-switch-placeholder {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  justify-content: center;
 }
 
+.switch-box {
+  width: 24px;
+  height: 24px;
+  border: 0.5px solid var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.switch-box.active {
+  background-color: var(--white);
+  border-color: var(--white);
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .our-offices-container {
+    flex-direction: row;
+    max-width: var(--max-width-desktop);
+  }
+
+  .images-our-offices {
+    width: 528px;
+    height: 468px;
+  }
+
+  .about-us {
+    width: 50%;
+    padding: 40px 32px;
+  }
+
+  .about-us h3 {
+    font-family: Work Sans;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 8%;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  .about-us p {
+    font-size: 16px;
+  }
+}
