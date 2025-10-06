@@ -5,6 +5,20 @@ import { wireHeaderSearch } from "./search-header.js";
 import { storageService } from "../utils/localStorage.js";
 import { updateCount } from "../utils/ui-helper.js";
 
+import { priceValidation } from "./priceValidation.js";
+
+import {
+  showSelectedFilters,
+  filterByCategory,
+  showAllProducts,
+  showSelectedSizes,
+  deleteSelected,
+  filterBySize,
+  filterByColor,
+  filterByPrice,
+  filterByDisponibility
+} from "./filters.js";
+
 async function init() {
   // 1. Traer productos
   let products = [];
@@ -29,12 +43,13 @@ async function init() {
     );
   }
 
-  // 3. Renderizar productos
+  // 3. Renderizar y atualizar productos
   displayProducts(list);
-  syncButtonsFromStorage();
   updateCartCount();
   updateWishlistCount();
   updateCount(list.length, ".product-count");
+  
+  syncButtonsFromStorage();
 
   // 4. Delegación de eventos en productos
   const container = document.getElementById("products-container");
@@ -54,6 +69,7 @@ async function init() {
 
   // 5. Buscador global
   wireHeaderSearch?.();
+  filterByPrice();
 
   // 6. Listener para búsqueda dinámica
   document.addEventListener("header:search", (ev) => {
@@ -65,6 +81,34 @@ async function init() {
     updateCount(filtered.length, '.product-count');
     syncButtonsFromStorage();
   });
+
+
+
+  document.addEventListener("price:change", ({ detail: { min, max } }) => {
+  const out = cachedProducts.filter(p => {
+    const okMin = min == null || p.price >= min;
+    const okMax = max == null || p.price <= max;
+    return okMin && okMax;
+  });
+  displayProducts(out);
+  updateProductCount(out.length);
+  syncButtonsFromStorage();
+});
+
+  // 7) ✅ Validación de precio
+  priceValidation("#minPrice, #maxPrice", {
+    pair: { a: "#minPrice", b: "#maxPrice", message: "El mínimo no puede ser mayor que el máximo." }
+  });
 }
 
+// Exponer si tu HTML usa onclick=...
+window.filterByCategory = filterByCategory;
+window.filterBySize = filterBySize
+window.filterByColor = filterByColor
+window.filterByDisponibility = filterByDisponibility
+window.showAllProducts = showAllProducts;
+window.showSelectedSizes = showSelectedSizes;
+window.deleteSelected = deleteSelected;
+
+// init al cargar DOM
 document.addEventListener("DOMContentLoaded", init);
