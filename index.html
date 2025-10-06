@@ -12,13 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles/productDetailing.css">
     <link rel="stylesheet" href="styles/breadcrumb.css">
 
 </head>
 
-<body>
+<>
     <header>
         <div class="sticky-banner">
             <div class="desktop-only">.</div>
@@ -26,22 +26,21 @@
             <div class="banner-link">
                 <a href="https://www.gm2dev.com/">VISITAR GM2 SITE
                     <!-- Falta que la imagen este centrada verticalmente -->
-                    <img src="assets/gm2dev-link-page.svg" alt="">
+                    <img src="assets/gm2dev-link-page.svg" alt="" />
                 </a>
             </div>
         </div>
 
         <nav class="header-navbar">
-
             <div class="left">
-                <img src="assets/menu-icon.svg" alt="Menú" class="menu-icon mobile-only">
+                <img src="assets/menu-icon.svg" alt="Menú" class="menu-icon mobile-only" />
 
                 <div class="search-bar">
                     <label for="search-input">
-                        <img src="assets/search-icon.svg" alt="Buscar" class="search-icon desktop-only">
+                        <img src="assets/search-icon.svg" alt="Buscar" class="search-icon desktop-only" />
                     </label>
                     <input type="text" list="search-suggestions" id="search-input" placeholder="¿Qué estás buscando?"
-                        class="desktop-only">
+                        class="desktop-only" />
                     <datalist id="search-suggestions">
                         <option value="Camisetas"></option>
                         <option value="Gorras"></option>
@@ -52,25 +51,26 @@
             </div>
 
             <div>
-                <img src="assets/gm2-logo.png" alt="" class="gm2-logo">
+                <img src="assets/gm2-logo.png" alt="" class="gm2-logo" />
             </div>
 
             <div class="right">
-                <img src="assets/search-icon.svg" alt="Buscar" class="search-icon mobile-only">
+                <img src="assets/search-icon.svg" alt="Buscar" class="search-icon mobile-only" />
                 <div class="cart">
-                    <img src="assets/cart-icon.svg" alt="Carrito" class="cart-icon">
+                    <img src="assets/cart-icon.svg" alt="Carrito" class="cart-icon" />
                     <span class="badge">10</span>
                 </div>
-                <img src="assets/profile-icon.svg" alt="Profile" class="profile-icon desktop-only">
-                <img src="assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only">
+                <img src="assets/profile-icon.svg" alt="Profile" class="profile-icon desktop-only" />
+                <img src="assets/wishlist-icon.svg" alt="Favoritos" class="wishlist-icon desktop-only" />
             </div>
-
         </nav>
 
         <div class="page-list desktop-only">
             <ul>
                 <li><a href="index.html" class="page-home">Home</a></li>
-                <li><a href="pages/product-listing-page.html" class=" page-productos">Productos</a></li>
+                <li>
+                    <a href="pages/product-listing-page.html" class=" page-productos">Productos</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -82,10 +82,8 @@
     </main>
 
 
-</body>
-
-
-<script src="scripts/page-list.js"></script>
-<script src="scripts/breadcrumb.js"></script>
+    <!--  -->
+    <script src="scripts/page-list.js"></script>
+    <script src="scripts/breadcrumb.js"></script>
 
 </html>
