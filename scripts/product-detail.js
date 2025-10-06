@@ -74,7 +74,6 @@ buttons.forEach((btn) => {
     btn.classList.add("active");
     const selectedLetter = btn.textContent;
     const selectedWord = sizeMap[selectedLetter];
-    const selected = btn.textContent;
     selectedSizeText.textContent = `Talle ${selectedWord}`;
   });
 });
