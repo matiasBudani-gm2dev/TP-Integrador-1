@@ -1,37 +1,38 @@
+// main.js
 import { getProducts, displayProducts, updateProductCount } from "./listing-products.js";
 import { updateCartCount, updateWishlistCount, toggleCart, toggleWishlist, syncButtonsFromStorage } from "./cart-wishlist.js";
 import { wireHeaderSearch } from "./search-header.js";
+import { priceValidation } from "./priceValidation.js";
 
-// ✅ importar desde filters.js
 import {
-  setProducts,
+  showSelectedFilters,
   filterByCategory,
-  filterBySize,
   showAllProducts,
-  showSelected,
-  deleteSelected
+  showSelectedSizes,
+  deleteSelected,
+  filterBySize,
+  filterByColor,
+  filterByPrice,
+  filterByDisponibility
 } from "./filters.js";
 
-// 🧠 Estado local solo si lo necesitás acá (p.ej. para buscador)
 let cachedProducts = [];
 
 async function init() {
-  // 1. Traer productos
+  // 1) Productos
   cachedProducts = await getProducts();
   displayProducts(cachedProducts);
   updateProductCount(cachedProducts.length);
+  showSelectedFilters(cachedProducts);
 
-  // 👉 pasar productos al módulo de filtros
-  setProducts(cachedProducts);
-
-  // 2. Marcar botones según localStorage
+  // 2) Botones según storage
   syncButtonsFromStorage();
 
-  // 3. Actualizar contadores en header
+  // 3) Contadores header
   updateCartCount();
   updateWishlistCount();
 
-  // 4. Delegación de eventos en productos
+  // 4) Delegación eventos productos
   const container = document.getElementById("products-container");
   if (container) {
     container.addEventListener("click", (e) => {
@@ -47,10 +48,11 @@ async function init() {
     });
   }
 
-  // 5. Buscador global
+  // 5) Buscador
   wireHeaderSearch?.();
+  filterByPrice()
 
-  // 6. Listener para búsqueda dinámica (no cambia)
+  // 6) Búsqueda dinámica
   document.addEventListener("header:search", (ev) => {
     const q = ev.detail.q.toLowerCase();
     const filtered = cachedProducts.filter((p) =>
@@ -60,13 +62,32 @@ async function init() {
     updateProductCount(filtered.length);
     syncButtonsFromStorage();
   });
+
+  document.addEventListener("price:change", ({ detail: { min, max } }) => {
+  const out = cachedProducts.filter(p => {
+    const okMin = min == null || p.price >= min;
+    const okMax = max == null || p.price <= max;
+    return okMin && okMax;
+  });
+  displayProducts(out);
+  updateProductCount(out.length);
+  syncButtonsFromStorage();
+});
+
+  // 7) ✅ Validación de precio
+  priceValidation("#minPrice, #maxPrice", {
+    pair: { a: "#minPrice", b: "#maxPrice", message: "El mínimo no puede ser mayor que el máximo." }
+  });
 }
 
-// ✅ Exponer funciones globales (si las usa tu HTML con onclick=... )
+// Exponer si tu HTML usa onclick=...
 window.filterByCategory = filterByCategory;
-window.filterBySize = filterBySize;
+window.filterBySize = filterBySize
+window.filterByColor = filterByColor
+window.filterByDisponibility = filterByDisponibility
 window.showAllProducts = showAllProducts;
-window.showSelected = showSelected;
+window.showSelectedSizes = showSelectedSizes;
 window.deleteSelected = deleteSelected;
 
+// init al cargar DOM
 document.addEventListener("DOMContentLoaded", init);
