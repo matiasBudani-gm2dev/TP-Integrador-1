@@ -4,7 +4,6 @@ body {
 .product-detail-arrow-btn {
   display: flex;
   justify-content: space-between;
-  justify-content: space-between;
   align-items: center;
   max-width: 200px;
   margin: 0 auto;
@@ -281,14 +280,15 @@ main {
   left: 250px;
   z-index: 10;
   width: 40px;
-  #products {
+}
+#products {
     position: relative;
     top: 10px;
     left: 170px;
     z-index: 10;
     width: 40px;
   }
-}
+
 #zoomImg {
   position: absolute;
   top: 150px;
