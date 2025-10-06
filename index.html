@@ -15,6 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="styles/breadcrumb.css">
 
 </head>
 
@@ -69,14 +70,23 @@
 
         <div class="page-list desktop-only">
             <ul>
-                <li><a href="#" class="selected-page page-home">Home</a></li>
-                <li><a href="#" class="selected-page page-productos">Productos</a></li>
+                <li><a href="index.html" class="page-home">Home</a></li>
+                <li><a href="pages/product-listing-page.html" class=" page-productos">Productos</a></li>
             </ul>
         </div>
     </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ul id="breadcrumb"></ul>
+        </nav>
+    </main>
+
+
 </body>
 
 
 <script src="scripts/page-list.js"></script>
+<script src="scripts/breadcrumb.js"></script>
 
 </html>

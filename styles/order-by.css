@@ -1,0 +1,57 @@
+.order-by-desktop-text {
+    display: none;
+}
+
+.order-by-option-selected{
+    display: none;
+}
+
+
+.order-by-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.order-by-header{
+    padding: 19.5px 24px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;   
+}
+
+@media (min-width: 768px){
+    
+    #order-by-label h5,
+    .order-by-logo{
+        display: none;
+    }
+
+    .order-by-option-selected{
+        display: flex;
+        gap: 4px;
+    }
+
+
+    .order-by-desktop-text {
+        margin-right: 24px;
+    }
+
+    .order-by-container{
+        position: static;
+        display: none;
+        width: 100px;
+        height: 80px;
+    }
+
+    .order-by-header {
+        display: none;
+    }
+}
