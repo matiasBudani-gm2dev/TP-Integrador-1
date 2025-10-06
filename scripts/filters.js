@@ -1,5 +1,6 @@
 // filters.js
-import { displayProducts, updateProductCount } from "./listing-products.js"
+import { displayProducts } from "./listing-products.js"
+import { updateCount } from "../utils/ui-helper.js"
 import { syncButtonsFromStorage } from "./cart-wishlist.js"
 
 /* ========= Estado ========= */
@@ -14,6 +15,7 @@ const selectedDisponibility = new Set()
 
 export function showSelectedFilters(list) {
   products = Array.isArray(list) ? list : []
+  console.log(products)
   products.forEach((prod)=>{
     if(prod.category.includes("clothing")){
 
@@ -81,7 +83,7 @@ function applyFilters() {
   })
 
   displayProducts(out)
-  updateProductCount(out.length)
+  updateCount(out.length, ".product-count")
   syncButtonsFromStorage()
 }
 
@@ -100,7 +102,7 @@ function toggleButtonImageById(elId) {
 // Mostrar todo (sin tocar estado de filtros)
 export function showAllProducts() {
   displayProducts(products)
-  updateProductCount(products.length)
+  updateCount(products.length, ".product-count")
   syncButtonsFromStorage()
 }
 
